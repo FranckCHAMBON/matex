@@ -84,7 +84,7 @@ On peut aussi obtenir le quotient et le reste simultanément avec ```divmod(a, b
 >
 >> **Solution** :
 >>```python
->>>>> (42 ** 1337) % 1000)
+>>>>> (42**1337) % 1000)
 >>552
 >>```
 >>
