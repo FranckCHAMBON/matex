@@ -32,7 +32,7 @@ Python3 est capable de travailler avec des entiers aussi grands que la mémoire 
 On a bien $b \neq 0$, et :
 
 > $a\div b \rightarrow (q, r)$,  
-> où $a=b\times q + r$, avec $0\leqslant r<d$.
+> où $a=b\times q + r$, avec $0\leqslant r<b$.
 
 > $a$ est le dividende, $b$ est le diviseur.  
 > $q$ est le quotient,  $r$ est le reste.
