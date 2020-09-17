@@ -106,11 +106,62 @@ Avec Python, on peut la calculer en important une fonction incluse dans le modul
 120
 ```
 
+Attention, sur la calculatrice NumWorks, la version de Python n'inclut pas `factorial`, on peut alors créer le script suivant :
+
+```python
+def factorial(n):
+    ans = 1
+    for x in range(1, n+1):
+        ans = ans * x
+    return ans
+
+def factorial(n: int)->int:
+    """ Renvoie la factorielle de n
+    n doit être un entier positif.
+    Version récursive pour les NSI
+    >>> factorial(0)
+    1
+    >>> factorial(5)
+    120
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+```
+
 **Exercice**
 : * Avec Python, calculer $A = 1000!$
 : * montrer que $ 10^{300} < A < 10^{3000}$ (avec et sans Python).
 > *Indice* : on pourra utiliser que $2^{10} = 1024 > 10^3$.
 
+**Réponse** :
+Avec Python
+```python
+>>> A = 1
+>>> for x in range(1, 1001):
+...     A = A * x
+>>> 10**300 < A < 10**3000
+True
+```
+Sans Python,
+* on obtient une majoration de $1000!$ en remplaçant tous les facteurs par $1000$, de sorte que :
+    * $A < 1000^{1000}$
+    * $A < (10^3)^{1000}$
+    * $A < 10^{3000}$
+* on obtient une minoration de $1000!$ en remplaçant tous les facteurs par $2$, sauf $1$ et $4$ que l'on conserve. On a donc une minoration avec $998$ facteurs égaux à $2$, le tout fois $4$.
+    * $A = 1×2×3×4×5×6×...×1000$
+    * $A > 1×2×2×4×2×2×...×2$
+    * $A > 2^{998}×4$
+    * $A > 2^{1000}$
+    * $A > (2^{10})^{100}$
+    * $A > 1024^{100}$
+    * $A > 1000^{100}$
+    * $A > (10^3)^{100}$
+    * $A > 10^{300}$
+
+Obtenir des majorations et des minorations est une activité importante des mathématiques, cela permet d'obtenir des encadrements. Il existe de nombreuses méthodes...
+    
 ## II] Diviseurs et multiples
 Dans $\mathbb{N}^*$, les **multiples** de $a$ sont : $a, 2a, 3a, 4a, \cdots$
 
@@ -174,9 +225,9 @@ On rappelle que $a$, $b$ et $n$ sont des entiers non nuls.
 
 **Propriété** : Si $a\times b=n$, avec $a < b$, alors $a < \sqrt{n}$.
 
-> *Preuve 1* : $a\times a < a\times b = n$, avec $\sqrt{\cdot}$ croissante sur $\mathbb{R}^+$, on a: $a < \sqrt{n}$.
+> *Preuve 1* : $a\times a < a\times b = n$, avec $\sqrt{\cdot}$ croissante sur $\mathbb{R}^+$, on a: $\sqrt{a×a} < \sqrt{n}$, donc $a<\sqrt{n}$.
 
-> *Preuve 2* : Si $\sqrt{n} < a < b$, alors $a\times b > (\sqrt{n})^2 = n$ ; absurde.
+> *Preuve 2* : Si $\sqrt{n} \leqslant a < b$, alors $a\times b > (\sqrt{n})^2 = n$ ; absurde.
 
 **Utilisation** : Pour obtenir la liste des diviseurs de $n$ non nul, il suffit de trouver ceux inférieurs à $\sqrt{n}$, d'y adjoindre leur 'binôme', et de tester éventuellement $\sqrt{n}$.
 
@@ -207,6 +258,25 @@ $4$ possède exactement trois diviseurs : $1$, lui-même, et $2$.
 $5$ possède exactement deux diviseurs : $1$ et lui-même.  
 
 > **Exercice** : Créer un script qui donne la somme des diviseurs d'un entier.
+
+```python
+def somme_diviseurs(n):
+    S = 0
+    for d in range(1, n+1):
+        if n % d == 0:
+            S = S + d
+
+def somme_diviseurs(n: int)->int:
+    """Renvoie la somme des diviseurs de l'entier n
+    Version NSI, en une ligne !
+    >>> somme_diviseurs(2)
+    3
+    >>> somme_diviseurs(6)
+    12
+    """
+    return sum(d for d in range(1, n+1) if n%d == 0)
+
+```
 
 ### IV] Nombres premiers
 Pour tout entier $n>1$, on a $1\times n = n$, donc $n$ possède au moins deux diviseurs : $1$ et lui-même.
@@ -263,14 +333,14 @@ def is_prime(n):
 1000000007, 1000000009, 1000000021, 1000000033, 1000000087, 1000000093, 1000000097, 
 ```
 
-Cette méthode fait, dans le pire des cas, presque $\sqrt{n}$ tours de boucle pour savoir si $n$ est premier. On dit alors que sa complexité temporelle est en $\mathcal{O}(\sqrt{n})$.
+Cette méthode fait, dans le pire des cas, $\sqrt{n}$ tours de boucle pour savoir si $n$ est premier. On dit alors que sa complexité temporelle est en $\mathcal{O}(\sqrt{n})$.
 
 Elle sera lente pour des entiers premiers de $18$ chiffres ou plus, ou composés avec le plus petit facteur premier à $9$ chiffres ou plus. Dans ces cas, elle fera plus d'un milliard d'opérations, ce qui n'est pas instantané. Elle restera rapide pour des nombres très grands qui possèdent un petit facteur premier.
 
 **Exercice**
 * Démontrer que $101!+17$ est divisible par $17$.
-* Calculer avec Python ce nombre ; est-il grand ?
-* Justifier que la fonction `is_prime` précédente est très rapide pour répondre avec cette entrée.
+* Calculer avec Python ce nombre ; est-il plus grand que $10^{18}$ ?
+* Justifier que la fonction `is_prime` précédente sera pourtant très rapide pour répondre avec cette entrée.
 * Proposer un nombre très grand pour lequel la fonction pourrait être lente.
 
 
@@ -314,6 +384,8 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
 : Avec cette définition,
     * Déterminer $\textrm{PGCD}(25, 35)$.
     * Déterminer $\textrm{PPCM}(24, 36)$.
+
+:warning: Attention, avec ces définitions, le calcul peut être très laborieux, nous verrons d'autres méthodes.
 
 > Avec la réforme des collèges, une nouvelle méthode est enseignée en classe de troisième, mais elle est peu utilisée par les élèves... Voici donc un rappel, ou une découverte pour certains :
 
