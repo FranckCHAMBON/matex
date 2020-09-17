@@ -109,13 +109,15 @@ Avec Python, on peut la calculer en important une fonction incluse dans le modul
 Attention, sur la calculatrice NumWorks, la version de Python n'inclut pas `factorial`, on peut alors créer le script suivant :
 
 ```python
+# Version simple
 def factorial(n):
     ans = 1
     for x in range(1, n+1):
         ans = ans * x
     return ans
 
-def factorial(n: int)->int:
+# Version NSI, avec la récursivité
+def factorial(n):
     """ Renvoie la factorielle de n
     n doit être un entier positif.
     Version récursive pour les NSI
@@ -133,7 +135,7 @@ def factorial(n: int)->int:
 **Exercice**
 : * Avec Python, calculer $A = 1000!$
 : * montrer que $ 10^{300} < A < 10^{3000}$ (avec et sans Python).
-> *Indice* : on pourra utiliser que $2^{10} = 1024 > 10^3$.
+> **Indice** : on pourra utiliser que $2^{10} = 1024 > 10^3$.
 
 **Réponse** :
 Avec Python
@@ -266,9 +268,9 @@ def somme_diviseurs(n):
         if n % d == 0:
             S = S + d
 
-def somme_diviseurs(n: int)->int:
+# Version NSI, en une ligne !
+def somme_diviseurs(n):
     """Renvoie la somme des diviseurs de l'entier n
-    Version NSI, en une ligne !
     >>> somme_diviseurs(2)
     3
     >>> somme_diviseurs(6)
@@ -306,6 +308,8 @@ def is_prime(n):
             return False
     return True
 ```
+
+Que l'on teste :
 
 ```python
 >>> [n for n in range(20) if is_prime(n)]
@@ -414,3 +418,50 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
 : Avec cette méthode, calculer :
     * $\textrm{PGCD}(62, 93)$
     * $\textrm{PPCM}(55, 121)$
+
+## VI] Devoirs
+
+### Exercice 1
+Par quel chiffre doit-on remplacer les zéros de $120450$ pour qu'il soit divisible par $99$ ?
+
+> **Indice** : faire une boucle Python pour tester tous les chiffres.
+
+### Exercice 2
+Les nombres de la forme $2^{2^n}+1$ où $n \in \mathbb{N}$, sont-ils tous premiers ?
+
+> **Indice** : Utiliser la fonction `is_prime` vue en cours et tester les premières valeurs de la suite.
+
+### Exercice 3
+Vérifier que pour tout $n \in [\![0..100]\!]$, et $p \in [\![0..50]\!]$ avec $p$ premier, on a : $n^p-n$ est divisible par $p$.
+
+> **Indice** : Faire le test avec une double boucle.
+
+### Exercice 4
+* Quel est le plus petit entier divisible par tous les entiers de $1$ à $15$ ? _Sans script_.
+* Et de $1$ à $150$ ? _Avec script_
+
+> **Indice** : Penser à la décomposition en facteurs premiers.
+
+### Exercice 5
+$p$, $q$, $r$ sont des nombres premiers distincts.
+1. Quelle est la décomposition en facteurs premiers de $(p^5q^7r)\times(p^2q)$ ?
+2. Quels sont les diviseurs de $p^5$ ?
+3. Quels sont les diviseurs de $p^2q$ ?
+4. Quels sont les diviseurs de $pqr$ ?
+5. Quel est le PGCD de $pq$ et $qr$ ?
+
+### Exercice 6 : Décomposition en facteurs premiers
+> Pour les élèves aussi en NSI.
+
+La question est de faire un premier script qui donne une décomposition en facteurs premiers.
+
+```python
+def factor(n):
+    """ Renvoie la décomposition en facteurs premiers de n
+    >>> factor(6)
+    [2, 3]
+    >>> factor(50)
+    [2, 5, 5]
+    """
+    # À compléter
+```
