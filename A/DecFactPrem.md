@@ -262,13 +262,15 @@ $5$ possède exactement deux diviseurs : $1$ et lui-même.
 > **Exercice** : Créer un script qui donne la somme des diviseurs d'un entier.
 
 ```python
+# Version spé Maths
 def somme_diviseurs(n):
     S = 0
     for d in range(1, n+1):
         if n % d == 0:
             S = S + d
+    return S
 
-# Version NSI, en une ligne !
+# Version spé NSI
 def somme_diviseurs(n):
     """Renvoie la somme des diviseurs de l'entier n
     >>> somme_diviseurs(2)
@@ -418,6 +420,27 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
 : Avec cette méthode, calculer :
     * $\textrm{PGCD}(62, 93)$
     * $\textrm{PPCM}(55, 121)$
+
+> * On a $62 = 2×31$ et $93 = 3×31$, donc $\textrm{PGCD}(62, 93) = 2×3×31 = 186$ 
+> * On a $55 = 5×11$ et $121=11^2$, donc $\textrm{PPCM}(55, 121) = 5×11^2$
+
+**Exercice** (type brevet)
+> Guillaume veut répartir la totalité de $760$ dragées au chocolat et $1045$ dragées aux amandes dans des sachets ayant la même répartition de dragées au chocolat et aux amandes.
+> 1. Peut-il faire $76$ sachets ? *Justifier*
+> 2. Quel nombre maximal de sachets peut-il réaliser ? *Justifier*
+> 3. Combien de dragées de chaque sorte y aura-t-il dans chaque sachet ? *Justifier*
+
+>> **Réponse**
+>> 1. Certes $760$ est divisible par $76$, mais pas $1045$ (qui n'est même pas pair), donc on ne peut pas faire un partage homogène de la totalité. Il y aurait un reste !
+>> 2. Le nombre de sachets est un diviseur du nombre de dragées (chocolat et aussi amandes), de plus on veut le maximum, on cherche donc le $\textrm{PGCD}(760, 1045)$.
+>>      * $760 = 10×76$
+>>      * $760 = 2×5×4×19$
+>>      * $760 = 2^3×5×19$
+>>      * $1045 = 5×209$
+>>      * $1045 = 5×11×19$
+>>      * Ainsi $\textrm{PGCD}(760, 1045) = 5×19 = 195$
+>>      * Guillaume pourra faire au maximum $195$ sachets *équitables, sans perte*. 
+>> 3. La composition d'un sachet sera de $760÷195 = 2^3 = 8$ dragées au chocolat, et $1045÷195=11$ dragées aux amandes.
 
 ## VI] Devoirs
 
