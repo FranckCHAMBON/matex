@@ -462,8 +462,7 @@ Vérifier que pour tout $n \in [\![0..100]\!]$, et $p \in [\![0..50]\!]$ avec $p
 > **Indice** : Faire le test avec une double boucle.
 
 ### Exercice 4
-* Quel est le plus petit entier divisible par tous les entiers de $1$ à $15$ ? _Sans script_.
-* Et de $1$ à $150$ ? _Avec script_
+Quel est le plus petit entier divisible par tous les entiers de $1$ à $15$ ? _Sans script_.
 
 > **Indice** : Penser à la décomposition en facteurs premiers.
 

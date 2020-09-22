@@ -3,6 +3,8 @@
 ## Exercice 1
 Par quel chiffre doit-on remplacer les zéros de $120450$ pour qu'il soit divisible par $99$ ?
 
+**Réponse** :
+
 Pour le chiffre $c$, $12c45c = 120450 + 1000c + c$. On teste les 10 chiffres...
 
 ```python
@@ -19,6 +21,8 @@ for c in range(10):
 ---
 ## Exercice 2
 Les nombres de la forme $F_n = 2^{2^n}+1$ où $n \in \mathbb{N}$, sont-ils tous premiers ?
+
+**Réponse** :
 
 Premiers exemples :
 * $F_0 = 2^{2^0}+1 = 2^1+1 = 3$, est premier.
@@ -96,51 +100,58 @@ def plus_petit_diviseur_premier(n):
 >>> plus_petit_diviseur_premier(F(5))
 ```
 
-```python
-641
-```
+    641
+
 
 ---
 ## Exercice 3
 Vérifier que pour tout $n \in [\![0..100]\!]$, et $p \in [\![0..50]\!]$ avec $p$ premier, on a : $n^p-n$ est divisible par $p$.
 
+**Réponse** :
+
+On va faire une double boucle qui fait le test demandé pour chaque cas :
 
 ```python
+nb_échec = 0
 for p in range(51):
     if is_prime(p):
         for n in range(101):
-            assert (n**p - n)%p == 0, ("échec", n, p)
-print("Succès")
+            if (n**p - n)%p != 0:
+                nb_échec = nb_échec + 1
+print(nb_échec, "échecs")
 ```
 
-    Succès
+    0 échecs
 
 
-Nous prouverons que cela est vrai pour tout $n \in \mathbb{N}$, et tout $p \in \mathbb{P}$.
+Nous prouverons bientôt que cela est vrai pour tout $n \in \mathbb{N}$, et tout $p \in \mathbb{P}$.
 
 ---
 ## Exercice 4
 Quel est le plus petit entier divisible par tous les entiers de $1$ à $15$ ? _Sans script_.  
-(Et de $1$ à $150$ ? _Avec script_)
 
+**Réponse** :
+Donnons la décomposition en facteurs premiers de chaque entier entre $2$ et $15$.
+* $2 = 2$
+* $3 = 3$
+* $4 = 2^2$
+* $5 = 5$
+* $6 = 2×3$
+* $7 = 7$
+* $8 = 2^3$
+* $9 = 3^2$
+* $10 = 2×5$
+* $11 = 11$
+* $12 = 2^2×3$
+* $13 = 13$
+* $14 = 2×7$
+* $15 = 3×5$
 
-```python
-from math import gcd as PGCD
-# gcd est dans 'math' à partir de Python3.6,
-# avant, il était dans 'fractions'.
+Le plus petit commun multiple s'obtient en trouvant le maximum des exposants associés à chaque nombre premier. On obtient :
 
-def PPCM(a, b): return a // PGCD(a, b) * b
+$$m = 2^3×3^2×5×7×11×13 = 360\,360$$
 
-N = int(input())
-ans = 1
-for n in range(2, N+1):
-    ans = PPCM(ans, n)
-print(ans)
-```
-
-    150
-    4963595372164418730243844250278933730416682962970482173955824000
-
+---
 
 ## Exercice 5
 $p$, $q$, $r$ sont des nombres premiers distincts.
@@ -150,11 +161,11 @@ $p$, $q$, $r$ sont des nombres premiers distincts.
 4. Quels sont les diviseurs de $pqr$ ?
 5. Quel est le PGCD de $pq$ et $qr$ ?
 
----
+
 **Réponse :**
 1. $A = (p^5q^7r)\times(p^2q)$  
 $A = (p^5\times p^2)\times(q^7\times q)\times r$  
-$A = p^7q^8r$, est décomposé facteurs premiers.
+$A = p^7q^8r$, est décomposé en facteurs premiers.
 
 2. Les diviseurs de $p^5$ sont $(1, p, p^2, p^3, p^4, p^5)$, ils sont agencés en une structure unidimensionnelle dont la somme est :  
 $S = 1+ p+ p^2+ p^3+ p^4+ p^5 = \dfrac{p^6-1}{p-1}$  
@@ -179,14 +190,20 @@ La question est de faire un premier script qui donne une décomposition en facte
 
 ```python
 def factor(n):
-    assert n>0
+    """Renvoie une liste, la décomposition en facteurs premiers de n.
+    >>> factor(6)
+    [2, 3]
+    >>> factor(8)
+    [2, 2, 2]
+    """
+    assert n > 0
     Factor = []
     p = 2
-    while n>1:
-        if n%p == 0:
+    while n > 1:
+        if n % p == 0:
             n //= p
             Factor.append(p)
-            while n%p == 0:
+            while n % p == 0:
                 n //= p
                 Factor.append(p)
         p += 1
@@ -215,14 +232,14 @@ for n in [4953851, 600851475143, 14837457737]:
 ```python
 def factor(n):
     # variante qui sort une liste de couples (p, e)
-    assert n>0
+    assert n > 0
     Factor = []
     p = 2
-    while n>1:
-        if n%p == 0:
+    while n > 1:
+        if n % p == 0:
             n //= p
             e = 1
-            while n%p == 0:
+            while n % p == 0:
                 n //= p
                 e += 1
             Factor.append((p, e))
@@ -250,8 +267,8 @@ for n in [4953851, 600851475143, 14837457737]:
 
 Critique du script : dans le pire des cas (quand $n$ est un nombre premier), la boucle <kbd>while</kbd> fait presque $n$ tours ; on dit alors que l'algorithme est en $\mathcal{O}(n)$.
 
-**Devoirs pour la semaine suivante** :
-* Modifier ce script pour le rendre en $\mathcal{O}\left(\sqrt{n}\right)$.    
+>**Devoirs pour la semaine suivante, pour les NSI+MATEX** :
+>> Modifier ce script pour le rendre en $\mathcal{O}\left(\sqrt{n}\right)$.    
 Il doit être rapide pour un nombre comme $n=2\;000\;000\;018$.  
-Pour cela, s'inspirer du CM1, et des deux versions incluses de ```is_prime```. Ici, une légère modification suffit !  
+Pour cela, s'inspirer du cours, et des deux versions incluses de ```is_prime```. Ici, une légère modification suffit !  
 
