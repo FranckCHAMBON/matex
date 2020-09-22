@@ -1,4 +1,4 @@
-# Mathématiques expertes
+# [Mathématiques expertes](https://franckchambon.github.io/matex/)
 
 >Classe de Terminale, au lycée Lucie Aubrac à Bollène
 
