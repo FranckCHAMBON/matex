@@ -261,6 +261,7 @@ $5$ possède exactement deux diviseurs : $1$ et lui-même.
 
 > **Exercice** : Créer un script qui donne la somme des diviseurs d'un entier.
 
+**Réponse** :
 ```python
 # Version spé Maths
 def somme_diviseurs(n):
@@ -299,6 +300,7 @@ Son plus petit diviseur, excepté $1$, est premier.
 
 > _Preuve 2_ : Par l'absurde, supposons qu'il y ait un nombre fini de nombres premiers notés $p_i$ (pour $i$ de $1$ à $k$). On considère $N = 1+p_1\times p_2\times \dots p_i \dots\times p_k$. On sait que $2$ est premier, donc $k>0$ et $N>1$ qui possède alors un plus petit diviseur (hors $1$) qui est un nombre premier $p_j$. Cependant le reste de la division de $N$ par $p_j$ est $1$ qui n'est donc pas un diviseur. Contradiction.
 
+On peut créer un script qui teste la primalité d'un entier :
 
 ```python
 def is_prime(n):
@@ -346,11 +348,16 @@ Cette méthode fait, dans le pire des cas, $\sqrt{n}$ tours de boucle pour savoi
 Elle sera lente pour des entiers premiers de $18$ chiffres ou plus, ou composés avec le plus petit facteur premier à $9$ chiffres ou plus. Dans ces cas, elle fera plus d'un milliard d'opérations, ce qui n'est pas instantané. Elle restera rapide pour des nombres très grands qui possèdent un petit facteur premier.
 
 **Exercice**
-* Démontrer que $101!+17$ est divisible par $17$.
-* Calculer avec Python ce nombre ; est-il plus grand que $10^{18}$ ?
-* Justifier que la fonction `is_prime` précédente sera pourtant très rapide pour répondre avec cette entrée.
-* Proposer un nombre très grand pour lequel la fonction pourrait être lente.
+1. Démontrer que $101!+17$ est divisible par $17$.
+2. Calculer avec Python ce nombre ; est-il plus grand que $10^{18}$ ?
+3. Justifier que la fonction `is_prime` précédente sera pourtant très rapide pour répondre avec cette entrée.
+4. Proposer un nombre très grand pour lequel la fonction pourrait être lente.
 
+**Réponse** :
+1. $101!$ est divisible par $17$, c'est un des facteurs dans sa définition. $17$ est aussi divisible par $17$, et enfin leur somme l'est.
+2. `factorial(101) > 10**18` renvoie `True`.
+3. En moins de $17$ tours de boucle, chaque tour étant rapide, on arrête le test avec cette entrée qui est divisible par $17$.
+4. Pour les nombres de la forme $N! ± n$, avec $N$ grand et $n$ petit (mais différent de $1$) on a un facteur évident $n$, donc ce nombre n'est pas premier. En revanche, avec $n = 1$, on ne peut rien dire  *a priori* sur $N! ± 1$ qui pourrait être premier, et qui certainement n'a aucun facteur premier inférieur à $N$. Par exemple, le test est long pour $11!+1$, et encore plus pour $27!+1$, mais aussi $24!-1$.
 
 **Propriété** : Tout entier supérieur à $1$ est produit de nombres premiers. On parle de **décomposition en facteurs premiers**. Elle est unique, à l'ordre près des facteurs.
 
@@ -393,23 +400,37 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
     * Déterminer $\textrm{PGCD}(25, 35)$.
     * Déterminer $\textrm{PPCM}(24, 36)$.
 
-:warning: Attention, avec ces définitions, le calcul peut être très laborieux, nous verrons d'autres méthodes.
+:warning: Attention, avec ces définitions, le calcul peut être très laborieux, nous verrons d'autres méthodes plus efficaces.
 
-> Avec la réforme des collèges, une nouvelle méthode est enseignée en classe de troisième, mais elle est peu utilisée par les élèves... Voici donc un rappel, ou une découverte pour certains :
+**Réponse** :
+* > $\mathcal{D}(25) = \{1, 5, 25\}$ et
+  > $\mathcal{D}(35) = \{1, 5, 7, 35\}$, donc  
+  > $\mathcal{D}(25) \cap \mathcal{D}(35) = \{1, 5\}$.
+  > Enfin $\textrm{PGCD}(25, 35) = 5$.
+* > Les multiples de $24$ sont : $24, 48, 72, 96, ...$
+  > Les multiples de $36$ sont : $36, 72, 108, ...$
+  > Ainsi $\textrm{PPCM}(24, 36) = 72$.
+
+Avec la réforme des collèges, une nouvelle méthode a été enseignée en classe de troisième, mais elle est peu connue des élèves... Voici donc un rappel, ou une découverte pour certains :
+
 
 **Méthode :** avec la décomposition en facteurs premiers.
 * On peut calculer le **PGCD** ; on prend le **minimum** des exposants correspondants.
 * On peut calculer le **PPCM** ; on prend le **maximum** des exposants correspondants.
 
-> **Exemple**  
-> Avec $a = 2^7 \times  3^2 \times  7 \times  11$, et $b = 2^5 \times  3^4 \times  7^3 \times  13$, on a :
+>**Exemple 1** : avec les questions précédentes, on peut répondre plus vite :
+>* $25 = 5^2$, et $35 = 5×7$, donc $\textrm{PGCD}(25, 35) = 5$.
+>* $24 = 2^3×3$, et $36 = 2^2×3^2$, donc $\textrm{PPCM}(24, 36) = 2^3×3^2 = 72$.
 
+
+>**Exemple 2**  
+>Avec $a = 2^7 \times  3^2 \times  7 \times  11$, et $b = 2^5 \times  3^4 \times  7^3 \times  13$, on a :
 > * $ab = 2^{7+5} \times  3^{2+4} \times  7^{1+3} \times  11 \times  13 = 2^{12} \times  3^6 \times  7^4 \times  11 \times  13$  
-
 > * $\textrm{PGCD}(a, b) = 2^{\textrm{min}(7, 5)} \times  3^{\textrm{min}(2, 4)} \times  7^{\textrm{min}(1, 3)} = 2^5\times 3^2\times 7$.
-
 > * $\textrm{PPCM}(a, b) = 2^{\textrm{max}(7, 5)} \times  3^{\textrm{max}(2, 4)} \times  7^{\textrm{max}(1, 3)} \times  11 \times  13$  
 >$\textrm{PPCM}(a, b) = 2^7\times 3^4\times 7^3\times 11\times 13$.
+
+**Remarque** : On préfère connaître la décomposition en facteurs premiers, plutôt que le résultat numérique... La décomposition est une donnée plus précieuse ; **réellement** !!!
 
 **Propriété :** $\textrm{PGCD}(a, b) \times  \textrm{PPCM}(a, b) = ab$
 > **Exemple**  
@@ -423,6 +444,7 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
     * $\textrm{PGCD}(62, 93)$
     * $\textrm{PPCM}(55, 121)$
 
+**Réponse** :
 > * On a $62 = 2×31$ et $93 = 3×31$, donc $\textrm{PGCD}(62, 93) = 2×3×31 = 186$ 
 > * On a $55 = 5×11$ et $121=11^2$, donc $\textrm{PPCM}(55, 121) = 5×11^2$
 
@@ -432,17 +454,17 @@ C'est le **P**lus **G**rand **C**ommun **D**iviseur, ([*gcd*](https://en.wikiped
 > 2. Quel nombre maximal de sachets peut-il réaliser ? *Justifier*
 > 3. Combien de dragées de chaque sorte y aura-t-il dans chaque sachet ? *Justifier*
 
->> **Réponse**
->> 1. Certes $760$ est divisible par $76$, mais pas $1045$ (qui n'est même pas pair), donc on ne peut pas faire un partage homogène de la totalité. Il y aurait un reste !
->> 2. Le nombre de sachets est un diviseur du nombre de dragées (chocolat et aussi amandes), de plus on veut le maximum, on cherche donc le $\textrm{PGCD}(760, 1045)$.
->>      * $760 = 10×76$
->>      * $760 = 2×5×4×19$
->>      * $760 = 2^3×5×19$
->>      * $1045 = 5×209$
->>      * $1045 = 5×11×19$
->>      * Ainsi $\textrm{PGCD}(760, 1045) = 5×19 = 195$
->>      * Guillaume pourra faire au maximum $195$ sachets *équitables, sans perte*. 
->> 3. La composition d'un sachet sera de $760÷195 = 2^3 = 8$ dragées au chocolat, et $1045÷195=11$ dragées aux amandes.
+**Réponse** :
+> 1. Certes $760$ est divisible par $76$, mais pas $1045$ (qui n'est même pas pair), donc on ne peut pas faire un partage homogène de la totalité. Il y aurait un reste !
+> 2. Le nombre de sachets est un diviseur du nombre de dragées (chocolat et aussi amandes), de plus on veut le maximum, on cherche donc le $\textrm{PGCD}(760, 1045)$.
+>      * $760 = 10×76$
+>      * $760 = 2×5×4×19$
+>      * $760 = 2^3×5×19$
+>      * $1045 = 5×209$
+>      * $1045 = 5×11×19$
+>      * Ainsi $\textrm{PGCD}(760, 1045) = 5×19 = 195$
+>      * Guillaume pourra faire au maximum $195$ sachets *équitables, sans perte*. 
+> 3. La composition d'un sachet sera de $760÷195 = 2^3 = 8$ dragées au chocolat, et $1045÷195=11$ dragées aux amandes.
 
 ## VI] Devoirs
 

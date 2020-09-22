@@ -12,3 +12,10 @@ for n in range(2, 256):
         print(n)
 
 print(ans)
+
+
+from math import factorial as f
+
+for n in range(100):
+    print(n, end=" ")
+    print(is_prime(f(n)-1))
