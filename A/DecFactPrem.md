@@ -324,7 +324,9 @@ Dans le pire des cas, la boucle de *is_prime* fait presque $n$ tours, donc un no
 
 ```python
 def is_prime(n):
-    "Version améliorée"
+    """ Test de primalité
+    Version améliorée ; O(√(n))
+    """
     if n < 2:
         return False
     for d in range(2, n):
@@ -450,7 +452,7 @@ Par quel chiffre doit-on remplacer les zéros de $120450$ pour qu'il soit divisi
 > **Indice** : faire une boucle Python pour tester tous les chiffres.
 
 ### Exercice 2
-Les nombres de la forme $2^{2^n}+1$ où $n \in \mathbb{N}$, sont-ils tous premiers ?
+Les nombres de la forme $F_n = 2^{2^n}+1$ où $n \in \mathbb{N}$, sont-ils tous premiers ?
 
 > **Indice** : Utiliser la fonction `is_prime` vue en cours et tester les premières valeurs de la suite.
 
