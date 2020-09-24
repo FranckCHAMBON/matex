@@ -9,3 +9,5 @@
 ## Partie 2 : Arithmétique
 
 1. [Décomposition en facteurs premiers](A/DecFactPrem.html)
+    * [Corrections des derniers exercices]() *À venir.*
+    <--! A/exos-corrigés-1.html -->
