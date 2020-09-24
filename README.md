@@ -10,4 +10,4 @@
 
 1. [Décomposition en facteurs premiers](A/DecFactPrem.html)
     * [Corrections des derniers exercices]() *À venir.*
-    <--! A/exos-corrigés-1.html -->
+    <!-- A/exos-corrigés-1.html -->
