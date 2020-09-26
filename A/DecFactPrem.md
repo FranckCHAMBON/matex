@@ -164,6 +164,11 @@ Sans Python,
 
 Obtenir des majorations et des minorations est une activité importante des mathématiques, cela permet d'obtenir des encadrements. Il existe de nombreuses méthodes...
     
+
+> **Remarque complémentaire** *(hors programme)*
+> Il existe une formule qui donne un meilleur encadrement de $n!$, il s'agit de [la formule de Stirling](https://fr.wikipedia.org/wiki/Formule_de_Stirling).
+
+
 ## II] Diviseurs et multiples
 Dans $\mathbb{N}^*$, les **multiples** de $a$ sont : $a, 2a, 3a, 4a, \cdots$
 
@@ -195,7 +200,7 @@ Y en a-t-il d'autres ? Cf III]
 
 **Propriété :** $a \mid n \iff $ le reste dans la division de $n$ par $a$ est nul.
 
-> **Exemple,** avec Python3, on calcule ce reste avec ```n % a```.
+> **Exemple** : avec Python3, on calcule ce reste avec ```n % a```.
 
 ```python
 >>> 143 % 13
