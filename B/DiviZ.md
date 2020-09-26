@@ -30,7 +30,7 @@ Soient $a,b,c$ trois entiers relatifs.
 9. Si $a\mid b$, alors $a\mid bc$ et $ac\mid bc$;
 10. Si  $ac\mid bc$ avec $c\neq 0$, alors $a\mid b$ ;
 11. Si  $a\mid b$ avec $b\neq 0$, alors $0<|a| \leqslant |b|$ ;
-12. Si  $a\mid b$ et $b\mid a$ , alors $a=\pm b$ ;
+12. Si  $a\mid b$ et $b\mid a$ , alors $a=\pm b$.
 
 > **Remarque** : on a écrit que $0$ divise $0$, cependant $0$ divisé par $0$ n'est pas défini... Nuance.
 
