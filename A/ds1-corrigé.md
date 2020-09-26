@@ -12,7 +12,8 @@
     * $280 = 14×20$
     * Ainsi les diviseurs de $280$ sont : $1, 2, 4, 5, 7, 14, 20, 40, 56, 70, 140, 280$.
 3. $42! + 9$ est divisible par $9$, donc il n'est pas premier.
-4. La fonction `mystère` permet de calculer **le nombre de diviseurs d'un entier**. C'est une fonction écrite quasi comme la fonction `somme_diviseurs` vue en cours.
+4. La fonction `mystère` permet de calculer **le nombre de diviseurs d'un entier**. C'est une fonction écrite quasi comme la fonction `somme_diviseurs` vue en cours. Pour chaque diviseur `d` on incrémente `ans` de $1$ qui était initialisé à $0$.
+
 ```python
 def mystère(n):
     ans = 0
@@ -29,7 +30,7 @@ def mystère(n):
     * $252 = 2×126 = 2^2×63 = 2^2×3^2×7$.
     * Ainsi $\textrm{PGCD}(144, 252) = 2^2×3^2 = 36$.
 2. 
-    1. Tous les inscrits doivent être dans une équipe, et les équipes doivent être homogène, donc le nombre d'équipe doit être un diviseur commun au nombre de garçons comme de filles. On en veut le maximum, ainsi le nombre d'équipe est $\textrm{PGCD}(144, 252) = 36$.
+    1. Tous les inscrits doivent être dans une équipe, et les équipes doivent être homogènes, donc le nombre d'équipe doit être un diviseur commun au nombre de garçons comme de filles. On en veut le maximum, ainsi le nombre d'équipes est $\textrm{PGCD}(144, 252) = 36$.
     2. Chaque équipe est composée de :
         * $144÷36 = 4$ filles ;
         * $252÷36 = 7$ garçons.
@@ -51,11 +52,12 @@ def mystère(n):
 **Remarques** : 
 * Avant d'arriver à $M_{11}$, on aurait pu penser que $M_n$ est premier si et seulement si $n$ est premier. Mais c'est faux en considérant $M_{11}$ qui est composé, alors que $11$ est premier.
 * On propose un script qui permet de vérifier davantage, et on peut prouver que $M_n$ est premier que si $n$ est premier ; sans la réciproque.
-* L'exercice est sans fin, car aujourd'hui encore, la recherche des plus grands nombres premiers utilise ces nombres $M_n$ qu'on appelle [nombres de Mersenne](https://fr.wikipedia.org/wiki/Nombre_de_Mersenne_premier).
+* L'exercice est sans fin, car aujourd'hui encore, la recherche des plus grands nombres premiers utilise ces nombres $M_n$ qu'on appelle [nombres de Mersenne](https://fr.wikipedia.org/wiki/Nombre_de_Mersenne_premier). C'est un thème fécond en mathématiques pour de nombreux travaux.
 
 ```python
+# avec la fonction is_prime vue en classe
 for n in range(60):
-    if is_prime(2**n -1):
+    if is_prime(2**n - 1):
         print(f"M_{n} est premier.")
 ```
     M_2 est premier.
@@ -67,4 +69,5 @@ for n in range(60):
     M_19 est premier.
     M_31 est premier.
 
-On constate que les indices sont bien premiers, mais il manque : $11$, $23$, $29$, $37$, $41$, $43$, $47$, $53$, $59$, ... $M_{67}$ est historiquement une première grande difficulté.
+On constate que les indices sont bien premiers, mais il manque : $11$, $23$, $29$, $37$, $41$, $43$, $47$, $53$, $59$, ...
+> $M_{67}$ est historiquement une première grande difficulté.
