@@ -19,11 +19,11 @@ $a\nmid b$ signifie : $a$ ne divise pas $b$.
 
 ### Propriétés
 Soient $a,b,c$ trois entiers relatifs.
-1. $1\mid a$ ; _($1$ est toujours un diviseur, de tout entier)_
-2. Si $a\mid 1$, alors $a=\pm 1$ ; _($\pm1$ sont les seuls inversibles de $\mathbb{Z}$)_
-3. Si $a\mid b$, alors $\pm a\mid \pm b$ ; _(Le signe n'a pas d'importance)_
-4.  $a\mid 0$ ; _(zéro est multiple de tout entier ; tous les entiers divisent zéro)_
-5.  Si $0\mid a$, alors $a=0$ ; _(autrement dit : zéro ne divise que zéro)_
+1. $1\mid a$ ; _( $1$ est toujours un diviseur, de tout entier. )_
+2. Si $a\mid 1$, alors $a=\pm 1$ ; _( $\pm1$ sont les seuls inversibles de $\mathbb{Z}$. )_
+3. Si $a\mid b$, alors $\pm a\mid \pm b$ ; _( Le signe n'a pas d'importance. )_
+4.  $a\mid 0$ ; _( Zéro est multiple de tout entier ; tous les entiers divisent zéro. )_
+5.  Si $0\mid a$, alors $a=0$ ; _( Autrement dit : zéro ne divise que zéro. )_
 6. $a\mid a$ ; _(réflexivité)_
 7. Si $a\mid b$ et $b\mid c$, alors $a\mid c$ ; _(transitivité)_
 8. Si $a\mid b$ et $a\mid c$, alors $a\mid b+c$ ; 
@@ -32,11 +32,16 @@ Soient $a,b,c$ trois entiers relatifs.
 11. Si  $a\mid b$ avec $b\neq 0$, alors $0<|a| \leqslant |b|$ ;
 12. Si  $a\mid b$ et $b\mid a$ , alors $a=\pm b$ ;
 
+> **Remarque** : on a écrit que $0$ divise $0$, cependant $0$ divisé par $0$ n'est pas défini... Nuance.
+
 **Une propriété très utile**
 > Avec $a, b, c, u, v \in \mathbb{Z}$,
->  si $a\mid b$ et $a\mid c$, alors $a\mid ub+vc$
+> * si $a\mid b$ et $a\mid c$,
+> * alors $a\mid ub+vc$.
+>
+> On dit aussi que si $a$ divise $b$ et $c$, alors $a$ divise toute combinaison linéaire de $b$ et $c$.
 
-> > *Preuve* : On a : $b = k_1 a$, et $c = k_2 a$, avec $k_1, k_2 \in \mathbb{Z}$, ainsi  
+> > **Preuve** : On a : $b = k_1 a$, et $c = k_2 a$, avec $k_1, k_2 \in \mathbb{Z}$, ainsi  
 > > $ub+vc = uk_1 a + vk_2 a = (uk_1 + vk_2) a$,  avec $(uk_1 + vk_2) \in \mathbb{Z}$  
 > > On conclut que : $a\mid ub+vc$
 
@@ -44,7 +49,7 @@ Soient $a,b,c$ trois entiers relatifs.
 ### Théorème
 Pour $a,b \in \mathbb{Z}$, avec $b\neq 0$, $\exists! \;q,r \in \mathbb{Z}$, tel que $a=bq+r$, et $0\leqslant r<|b|$.
 
-**Attention**, avec Python et <kbd>divmod</kbd> ou <kbd>%</kbd>, si $b<0$, le reste $r$ vérifie alors $b<r\leqslant 0$.  
+**⚠️ Attention**, avec Python et <kbd>divmod</kbd> ou <kbd>%</kbd>, si $b<0$, le reste $r$ vérifie alors $b<r\leqslant 0$.  
 Mais on a toujours $a=bq+r$.  
 Avec d'autres langages de programmation, il faudra vérifier la règle !
 
@@ -53,13 +58,13 @@ Avec d'autres langages de programmation, il faudra vérifier la règle !
 for b in [+3, -3]:
     for a in [-13, -12, +12, +13]:
         q, r = divmod(a, b)
-        q, r = a//b, a%b
+        q, r = a//b, a%b # variante de la ligne précédente
         print(a, "divisé par", b, "=> quotient :", q, "; reste :", r)
         print("Vérification :", a, "=", str(b)+"*"+str(q), "+", r, end="  et  ")
         if b>0:
             print("0 <=", r, "<", b)
         else:
-            print("b", "<", r, "<= 0")
+            print(b, "<", r, "<= 0")
         print()
 ```
 
@@ -76,21 +81,21 @@ for b in [+3, -3]:
     Vérification : 13 = 3*4 + 1  et  0 <= 1 < 3
     
     -13 divisé par -3 => quotient : 4 ; reste : -1
-    Vérification : -13 = -3*4 + -1  et  b < -1 <= 0
+    Vérification : -13 = -3*4 + -1  et  -3 < -1 <= 0
     
     -12 divisé par -3 => quotient : 4 ; reste : 0
-    Vérification : -12 = -3*4 + 0  et  b < 0 <= 0
+    Vérification : -12 = -3*4 + 0  et  -3 < 0 <= 0
     
     12 divisé par -3 => quotient : -4 ; reste : 0
-    Vérification : 12 = -3*-4 + 0  et  b < 0 <= 0
+    Vérification : 12 = -3*-4 + 0  et  -3 < 0 <= 0
     
     13 divisé par -3 => quotient : -5 ; reste : -2
-    Vérification : 13 = -3*-5 + -2  et  b < -2 <= 0
+    Vérification : 13 = -3*-5 + -2  et  -3 < -2 <= 0
     
 
 
 ### Propriété
-$a \mid b$ si et seulement si $b=0$  **ou alors** le reste de la division euclidienne de $b$ par $a$ est $0$.
+$a \mid b$ si et seulement si $b=0$  **ou alors** $a\neq 0$ et le reste de la division euclidienne de $b$ par $a$ est $0$.
 
 
 ## III] PGCD de deux entiers
@@ -108,7 +113,7 @@ On a toujours :
 
 Soient $a, b \in \mathbb{Z}$, dont un non nul au moins, on appelle **PGCD** de $a$ et $b$ _(**P**lus **G**rand **C**ommun **D**iviseur)_, et on note $a \land b$, le plus grand entier divisant à la fois $a$ et $b$.
 
-**Attention :** On étend cette définition en posant $0 \land 0 = 0$ ; mais cela traduit toujours que tous les entiers divisent $0$. Dans ce cas seul, cela ne traduit pas que $0$ est le plus grand diviseur commun à $0$ et $0$ !!!
+**⚠️ Attention :** On étend cette définition en posant $0 \land 0 = 0$ ; mais cela traduit toujours que tous les entiers divisent $0$. Dans ce cas seul, cela ne traduit pas que $0$ est le plus grand diviseur commun à $0$ et $0$ !!!
 
 ### Propriétés
 Pour $a, b \in \mathbb{Z}$, on a :
@@ -122,7 +127,7 @@ On peut bien évidemment utiliser les méthodes étudiées sur $\mathbb{N}^*$.
 
 
 ## IV] Algorithme d'Euclide
-On a vu comment calculer le PGCD de deux entiers ayant connaissance de leur décomposition en facteurs premiers, mais cette méthode est lente pour de grands entiers. L'algorithme d'Euclide est une méthode efficace.
+On a vu comment calculer le $\text{PGCD}$ de deux entiers ayant connaissance de leur décomposition en facteurs premiers, mais cette méthode est lente pour de grands entiers. L'algorithme d'Euclide est une méthode efficace.
 
 ### Un exemple
 On souhaite calculer $\text{PGCD}(323, 187)$.
@@ -141,14 +146,14 @@ $a = bq+r$, ainsi $r = a-bq$, et d'après la dernière propriété (utile) de I]
 on déduit que si $d \mid a$ et $d \mid b$, alors $d \mid r$,   
 mais aussi que si $d \mid b$ et $d \mid r$, alors $d \mid a$.   
 Dit autrement : les diviseurs communs à $a$ et $b$ sont les mêmes que ceux à $b$ et $r$.  
-En particulier ils ont le même PGCD. Ce qui justifie l'algorithme et prouve un peu plus :
+En particulier ils ont le même PGCD. Ce qui justifie l'algorithme et prouve même un peu plus :
 
-**Les diviseurs communs à $a$ et $b$, sont les diviseurs de leur PGCD.**
+> **Les diviseurs communs à $a$ et $b$, sont les diviseurs de leur PGCD.**
 
 
 ## V] Applications
-* Une fraction $\frac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible.
-* Pour additionner deux fractions, on doit les mettre au même dénominateur. Une méthode consiste à utiliser le PPCM. 
+* Une fraction $\dfrac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible.
+* Pour additionner deux fractions, on doit les mettre au même dénominateur. Une méthode consiste à utiliser le $\text{PPCM}$. 
 * Pour résoudre des problèmes du genre :
 > Un philatéliste possède 1631 timbres français et 932 timbres étrangers. Il souhaite vendre toute sa collection en réalisant des lots identiques, c'est à dire comportant le même nombre de timbres français et le même nombre de timbres étrangers.
 > 1. Calculer le nombre maximum de lots qu'il pourra réaliser.

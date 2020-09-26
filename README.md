@@ -15,8 +15,21 @@
         3. Liste des diviseurs
         4. Nombres premiers
         5. PGCD, PPCM
+    * Objectifs principaux :
+        * Découvrir du vocabulaire en arithmétique, et en Python.
+        * Savoir obtenir la décomposition en facteurs premiers d'un entier inférieur à 1000.
+        * Savoir calculer le PGCD de deux entiers inférieurs à 1000.
     * [Devoir surveillé n°1](A/ds1.html)
         * [Corrigé du DS n°1](A/ds1-corrigé.html)
     * [Feuille d'exercices n°1]((A/exos-1.html))
         * [Correction des exercices](A/exos-corrigés-1.html)
-2. Divisibilité dans Z ; *À venir.*
+2. [Divisibilité dans Z](B/DiviZ.html)
+    * Sommaire
+        1. Définition, premières propriétés
+        2. Division euclidienne
+        3. PGCD de deux entiers
+        4. Algorithme d'Euclide
+        5. Applications
+    * Objectifs principaux :
+        * Travailler des preuves simples en arithmétiques.
+        * Découvrir l'algorithme d'Euclide.
