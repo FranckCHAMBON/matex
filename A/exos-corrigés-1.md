@@ -47,7 +47,7 @@ Aujourd'hui l'outil informatique permet une réponse rapide :
 
 ```python
 def is_prime(n):
-    """ Test de primalité
+    """Test de primalité
     Version améliorée ; O(√(n))
     """
     if n < 2:
@@ -172,8 +172,9 @@ $S = 1+ p+ p^2+ p^3+ p^4+ p^5 = \dfrac{p^6-1}{p-1}$
 *Remarque :* $5$ est un exposant moyen, plus petit la formule de gauche est très rapide, plus grand la formule de droite devient intéressante.
 
 3. Les diviseurs de $p^2q$ ont une structure bidimensionelle :  
-$1, p, p^2,$  
-$q, pq, p^2q$  
+$1, p, p^2,$
+$q, pq, p^2q$
+
 dont la somme est $S = (1+ p+ p^2) + q(1+ p+ p^2)$  
 $S= (1+q)(1+ p+ p^2)$.  
 On donnera une formule générale pour la somme.
@@ -181,11 +182,11 @@ On donnera une formule générale pour la somme.
 4. Les diviseurs de $pqr$ se placent au sommet d'un cube : 
 $1, p, q, r, pq, pr, qr, pqr$, dont la somme est $(1+p)(1+q)(1+r)$
 
-5. Le PGCD de $pq$ et $qr$ est $q$.
+5. Le $\textrm{PGCD}$ de $pq$ et $qr$ est $q$.
 
 
 ## Exercice 6 : Décomposition en facteurs premiers
-La question est de faire un premier script qui donne une décomposition en facteurs premiers.
+La question (NSI+MATEX) est de faire un premier script qui donne une décomposition en facteurs premiers.
 
 
 ```python
@@ -231,7 +232,7 @@ for n in [4953851, 600851475143, 14837457737]:
 
 ```python
 def factor(n):
-    # variante qui sort une liste de couples (p, e)
+    # variante qui renvoie une liste de couples (p, e)
     assert n > 0
     Factor = []
     p = 2
@@ -267,7 +268,7 @@ for n in [4953851, 600851475143, 14837457737]:
 
 Critique du script : dans le pire des cas (quand $n$ est un nombre premier), la boucle <kbd>while</kbd> fait presque $n$ tours ; on dit alors que l'algorithme est en $\mathcal{O}(n)$.
 
->**Devoirs pour la semaine suivante, pour les NSI+MATEX** :
+>**Devoirs pour la semaine suivante, pour les élèves NSI+MATEX** :
 >> Modifier ce script pour le rendre en $\mathcal{O}\left(\sqrt{n}\right)$.    
 Il doit être rapide pour un nombre comme $n=2\;000\;000\;018$.  
 Pour cela, s'inspirer du cours, et des deux versions incluses de ```is_prime```. Ici, une légère modification suffit !  
