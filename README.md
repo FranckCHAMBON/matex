@@ -21,7 +21,7 @@
         * Savoir calculer le PGCD de deux entiers inférieurs à 1000.
     * [Devoir surveillé n°1](A/ds1.html)
         * [Corrigé du DS n°1](A/ds1-corrigé.html)
-    * [Feuille d'exercices n°1]((A/exos-1.html))
+    * [Feuille d'exercices n°1](A/exos-1.html)
         * [Correction des exercices](A/exos-corrigés-1.html)
 2. [Divisibilité dans Z](B/DiviZ.html)
     * Sommaire
@@ -33,3 +33,4 @@
     * Objectifs principaux :
         * Travailler des preuves simples en arithmétiques.
         * Découvrir l'algorithme d'Euclide.
+    * [Feuille d'exercices n°2](B/exos-2.html)
