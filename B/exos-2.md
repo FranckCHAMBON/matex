@@ -35,3 +35,13 @@ Calculer $A = \dfrac{?}{?} + \dfrac{?}{?} × \dfrac{?}{?}$
 
 *Donner le résultat sous forme d'une fraction irréductible.*
 
+## Exercice 5
+
+## Exercice 6
+> Pour les élèves aussi en NSI.
+
+On rappelle que : 
+* $\text{PGCD}(a, 0) = |a|$ pour tout $a\in \mathbb Z$
+* Pour $b\neq 0$, $\text{PGCD}(a, b) = \text{PGCD}(b, r)$, où $r$ est le reste dans la division euclidienne de $a$ par $b$.
+
+En déduire une fonction Python récursive de calcul de $\text{PGCD}$.
