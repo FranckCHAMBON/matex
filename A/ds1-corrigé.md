@@ -9,9 +9,10 @@
     * $280 = 4×70$
     * $280 = 5×56$
     * $280 = 7×40$
+    * $280 = 8×35$
     * $280 = 10×28$
     * $280 = 14×20$
-    * Ainsi les diviseurs de $280$ sont : $1, 2, 4, 5, 7, 10, 14, 20, 28, 40, 56, 70, 140, 280$.
+    * Ainsi les diviseurs de $280$ sont : $1, 2, 4, 5, 7, 8, 10, 14, 20, 28, 35, 40, 56, 70, 140, 280$.
 3. $42! + 9$ est divisible par $9$, donc il n'est pas premier.
 4. La fonction `mystère` permet de calculer **le nombre de diviseurs d'un entier**. C'est une fonction écrite quasi comme la fonction `somme_diviseurs` vue en cours. Pour chaque diviseur `d` on incrémente `ans` de $1$ qui était initialisé à $0$.
 
