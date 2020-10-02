@@ -44,7 +44,7 @@ def mystère(n):
 * $M_3 = 2^3 - 1 = 8 - 1 = 7$ ; est **premier**.
 * $M_4 = 2^4 - 1 = 16 - 1 = 15 = 3×5$ ; n'est pas premier.
 * $M_5 = 2^5 - 1 = 32 - 1 = 31$ ; est **premier**.
-* $M_6 = 2^6 - 1 = 64 - 1 = 63 = 3×31$ ; n'est pas premier.
+* $M_6 = 2^6 - 1 = 64 - 1 = 63 = 3×21$ ; n'est pas premier.
 * $M_7 = 2^7 - 1 = 128 - 1 = 127$ ; est **premier**.
 * $M_8 = 2^8 - 1 = 256 - 1 = 255$, divisible par $5$ ; n'est pas premier.
 * $M_9 = 2^9 - 1 = 512 - 1 = 511$, divisible par $7$ ; n'est pas premier.
