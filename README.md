@@ -33,4 +33,4 @@
     * Objectifs principaux :
         * Travailler des preuves simples en arithmétique.
         * Découvrir l'algorithme d'Euclide.
-<!--    * [Feuille d'exercices n°2](B/exos-2.html) -->
+    * [Feuille d'exercices n°2](B/exos-2.html)

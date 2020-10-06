@@ -139,7 +139,11 @@ On souhaite calculer $\text{PGCD}(323, 187)$.
 > D'après l'algorithme d'Euclide, $\text{PGCD}(323, 187) = 17$.
 
 
-**Preuve :** Soit $a\geqslant b$.  
+**Preuve :** 
+1. *L'algorithme termine.*
+Le diviseur suivant à la prochaine étape est le reste de la division actuelle, or on sait que le reste est strictement inférieur au diviseur, ce qui nous donne une suite strictement décroissante d'entiers naturels. Nécessairement elle arrive à zéro en un nombre fini d'étapes.
+2. *L'algorithme est correct.*
+Soit $a\geqslant b$.  
 Si $b=0$, alors $\text{PGCD}(a, b) = a$. C'est fini.  
 Sinon, on fait la division euclidienne de $a$ par $b$.  
 $a = bq+r$, ainsi $r = a-bq$, et d'après la dernière propriété (utile) de I],  
@@ -152,7 +156,7 @@ En particulier ils ont le même PGCD. Ce qui justifie l'algorithme et prouve mê
 
 
 ## V] Applications
-* Une fraction $\dfrac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible.
+* Une fraction $\dfrac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible. C'est la bonne méthode à utiliser.
 * Pour additionner deux fractions, on doit les mettre au même dénominateur. Une méthode consiste à utiliser le $\text{PPCM}$. 
 * Pour résoudre des problèmes du genre :
 > Un philatéliste possède 1631 timbres français et 932 timbres étrangers. Il souhaite vendre toute sa collection en réalisant des lots identiques, c'est à dire comportant le même nombre de timbres français et le même nombre de timbres étrangers.

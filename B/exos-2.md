@@ -27,15 +27,29 @@ Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
 ## Exercice 3
 
-Avec l'algorithme d'Euclide, calculer $\text{PGCD}(???, ???)$.
+Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
 
 ## Exercice 4
 
-Calculer $A = \dfrac{?}{?} + \dfrac{?}{?} × \dfrac{?}{?}$
+Calculer $A = \dfrac{21}{1535} + \dfrac{17}{2763}$
+
+*Donner le résultat sous forme d'une fraction irréductible. Justifier cela de manière efficace !*
+
+> **Indice** : penser à l'algorithme d'Euclide.
+
+## Exercice 5
+
+Calculer $B = \dfrac{15730}{25137} × \dfrac{45619}{112200}$
 
 *Donner le résultat sous forme d'une fraction irréductible.*
 
+> **Indice** : penser à la décomposition en facteurs premiers des numérateurs et des dénominateurs.
+
 ## Exercice 5
+
+Calculer $C = \dfrac{1}{91} + \dfrac{2}{91} × \dfrac{5}{3}$
+
+*Donner le résultat sous forme d'une fraction irréductible.*
 
 ## Exercice 6
 > Pour les élèves aussi en NSI.
