@@ -156,11 +156,40 @@ En particulier ils ont le même PGCD. Ce qui justifie l'algorithme et prouve mê
 
 
 ## V] Applications
-* Une fraction $\dfrac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible. C'est la bonne méthode à utiliser.
-* Pour additionner deux fractions, on doit les mettre au même dénominateur. Une méthode consiste à utiliser le $\text{PPCM}$. 
-* Pour résoudre des problèmes du genre :
-> Un philatéliste possède 1631 timbres français et 932 timbres étrangers. Il souhaite vendre toute sa collection en réalisant des lots identiques, c'est à dire comportant le même nombre de timbres français et le même nombre de timbres étrangers.
+
+### Simplification de fractions
+Une fraction $\dfrac a b$ peut être simplifiée au maximum par le $\text{PGCD}(a, b)$, elle devient alors irréductible. C'est la bonne méthode à utiliser.
+
+#### Exemple
+Simplifions $A = \dfrac{39}{65}$.
+* $65÷39→(q=1, r=26)$
+* $39÷26→(q=1, r=13)$
+* $26÷13→(q=2, r=0)$ ; ce reste est nul ; le dernier diviseur était $13$, d'après l'algorithme d'Euclide c'est le $\text{PGCD}(65, 39)$.
+* On simplifie la fraction par $13$.
+* $A = \dfrac{3×13}{5×13}$
+* $A = \dfrac{3}{5}$ est irréductible.
+
+### Additions de fractions
+Pour additionner deux fractions, on doit les mettre au même dénominateur. Une méthode consiste à utiliser le $\text{PPCM}$, qui se calcule... avec le $\text{PGCD}$.
+
+#### Exemple
+Calculons $B = \dfrac{11}{60} + \dfrac{17}{84}$.
+* $84÷60→(q=1, r=24)$
+* $60÷24→(q=2, r=12)$
+* $24÷12→(q=2, r=0)$ ; ce reste est nul ; le dernier diviseur était $12$, d'après l'algorithme d'Euclide c'est le $\text{PGCD}(60, 84)$.
+* $B = \dfrac{11}{5×12} + \dfrac{17}{7×12}$
+* $B = \dfrac{11×7}{5×12×7} + \dfrac{17×5}{7×12×5}$ ; on multiplie **en haut et en bas**.
+* $B = \dfrac{77+85}{5×12×7}$ ; *on ne calcule pas le dénominateur, une forme plutôt factorisée pourrait être plus utile pour simplifier*.
+* $B = \dfrac{162}{5×12×7}$ ; *on voit facilement qu'on ne peut pas simplifier par $5$, ni par $7$, mais plutôt par des facteurs premiers de $12$*.
+* $B = \dfrac{6×27}{5×6×2×7}$
+* $B = \dfrac{3^3}{5×2×7}$ ; *on peut justifier que la fraction est irréductible, avec les décompositions en facteurs premiers* 
+* $B = \dfrac{27}{70}$ est irréductible.
+
+
+### Problèmes classiques (type ancien Brevet)
+> Un philatéliste possède $1631$ timbres français et $932$ timbres étrangers. Il souhaite vendre toute sa collection en réalisant des lots identiques, c'est à dire comportant le même nombre de timbres français et le même nombre de timbres étrangers.
 > 1. Calculer le nombre maximum de lots qu'il pourra réaliser.
 > 2. Combien y-aura-t-il, dans ce cas, de timbres français et étrangers par lot ? 
-> > **Réponse :** Les lots sont identiques, donc le nombre de lot est un diviseur de 1631, mais aussi de 932, il en veut le maximum, donc le nombre de lots est le PGCD(1631, 932)... 
-* $\cdots$
+> > **Réponse :** Les lots sont identiques, donc le nombre de lot est un diviseur de $1631$, mais aussi de $932$, il en veut le maximum, donc le nombre de lots est le $\text{PGCD}(1631, 932)$... 
+
+### $\cdots$
