@@ -68,4 +68,4 @@ On rappelle que :
 
 En déduire une fonction Python récursive de calcul de $\text{PGCD}$.
 
-> **Indice** : indice.
+> **Indice** : la fonction `abs` pourrait être utile.
