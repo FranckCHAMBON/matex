@@ -1,342 +1,74 @@
 > Une théorie mathématique ne doit être regardée comme parfaite que si elle a été rendue tellement claire qu’on peut la faire comprendre au premier individu rencontré dans la rue.  
 > **David Hilbert** en 1900
 
-## Exercice 1 - Les devoirs
-Factorisation d'un entier $n$ en $\mathcal{O}(\sqrt{n})$.
+# Feuille d'exercices 2
 
+## Exercice 1
 
-```python
-def factor(n):
-    """ Retourne une liste de couples (p, e),
-    n étant égal au produit des p^e
-    Exemple : factor(12) retourne
-              [(2, 2), (3, 1)]
-    Complexité : O(√(n))
-    """
-    
-    assert n>0
-    Factor = []
-    p = 2
-    while n>1:
-        # début modification
-        if p*p > n:
-            # dans ce cas, n est égal à 1, ou bien premier
-            if n > 1:
-                Factor.append((n, 1))
-            return Factor
-        # fin modification
-        if n%p == 0:
-            n //= p
-            e = 1
-            while n%p == 0:
-                n //= p
-                e += 1
-            Factor.append((p, e))
-        p += 1
-    return Factor
+Démontrer les premières propriétés vues en cours ; à savoir : 
 
-for n in range(7, 13):
-    print("factor({}) retourne :".format(n), factor(n))
+Soient $a,b,c$ trois entiers relatifs.
+1. $1\mid a$ ; _( $1$ est toujours un diviseur, de tout entier. )_
+2. Si $a\mid 1$, alors $a=\pm 1$ ; _( $\pm1$ sont les seuls inversibles de $\mathbb{Z}$. )_
+3. Si $a\mid b$, alors $\pm a\mid \pm b$ ; _( Le signe n'a pas d'importance. )_
+4.  $a\mid 0$ ; _( Zéro est multiple de tout entier ; tous les entiers divisent zéro. )_
+5.  Si $0\mid a$, alors $a=0$ ; _( Autrement dit : zéro ne divise que zéro. )_
+6. $a\mid a$ ; _(réflexivité)_
+7. Si $a\mid b$ et $b\mid c$, alors $a\mid c$ ; _(transitivité)_
+8. Si $a\mid b$ et $a\mid c$, alors $a\mid b+c$ ; 
+9. Si $a\mid b$, alors $a\mid bc$ et $ac\mid bc$;
+10. Si  $ac\mid bc$ avec $c\neq 0$, alors $a\mid b$ ;
+11. Si  $a\mid b$ avec $b\neq 0$, alors $0<|a| \leqslant |b|$ ;
+12. Si  $a\mid b$ et $b\mid a$ , alors $a=\pm b$.
 
-for n in [4953851, 600851475143, 14837457737, 2000000018]:
-    print("factor({}) retourne :".format(n), factor(n))
+### Corrigé
+1. $\forall a \in \mathbb Z, a = a×1$, ainsi $1\mid a$.
+2. Les solutions de l'équation sur $\mathbb Z$ : $a×b = 1$ sont $(a=1, b=1)$ et $(a=-1, b=-1)$, en effet ni $a$ ni $b$ ne peuvent être nuls, et ni de valeur absolue supérieure à $1$.
+3. Si $a\mid b$, alors $b = a×k$ pour $k\in \mathbb Z$, on déduit $-b=-a×k$, mais aussi $-b=a×(-k)$, et encore $b=(-a)×k$, le tout avec $(-a)$ et $(-k)$ dans $\mathbb Z$ (*important à souligner*), ainsi $\pm a \mid \pm b$.
+4. $\forall a\in\mathbb Z, 0=0×a$, ainsi $a\mid 0$.
+> Remarque : $0\mid 0$, certes, mais $0$ divisé par $0$ n'est pas défini. C'est différent.
+5. Si $0\mid a$, alors $a=0×k$, avec $k\in\mathbb Z$, donc $a=0$.
+6. $a=a×1$, donc $a\mid a$.
+7. Si $a\mid b$ et $b\mid c$, alors $c=b×k$ avec $k\in\mathbb Z$, et $b=a×l$ avec $l\in\mathbb Z$, d'où $c = (a×l)×k = a×(l×k)$ avec $(l×k)\in\mathbb Z$, ainsi $a\mid c$.
+8. Si $a\mid b$ et $a\mid c$, alors $b=a×k$ avec $k\in\mathbb Z$, et $c=a×l$ avec $l\in\mathbb Z$, ainsi $b+c = a×k+a×l=a×(k+l)$, avec $(k+l)\in\mathbb Z$, ainsi $a\mid b+c$.
+9. Si $a\mid b$, alors $b=a×k$ avec $k\in\mathbb Z$, donc $bc=a×(k×c)$ avec $(k×c)\in\mathbb Z$, et $bc = a×k×c = (ac)×k$ avec $(ac)\in\mathbb Z$, ainsi $a\mid bc$ et $ac\mid bc$. *On a utilisé ici la commutativité de la multiplication !.*
+10. Si  $ac\mid bc$ avec $c\neq 0$, alors $bc=ac×k$ avec $k\in\mathbb Z$, d'où $b=a×k$, ainsi $a\mid b$.
 
-```
+## Exercice 2
 
-    factor(7) retourne : [(7, 1)]
-    factor(8) retourne : [(2, 3)]
-    factor(9) retourne : [(3, 2)]
-    factor(10) retourne : [(2, 1), (5, 1)]
-    factor(11) retourne : [(11, 1)]
-    factor(12) retourne : [(2, 2), (3, 1)]
-    factor(4953851) retourne : [(7, 2), (17, 1), (19, 1), (313, 1)]
-    factor(600851475143) retourne : [(71, 1), (839, 1), (1471, 1), (6857, 1)]
-    factor(14837457737) retourne : [(1471, 2), (6857, 1)]
-    factor(2000000018) retourne : [(2, 1), (1000000009, 1)]
-
-
-Critique du script : dans le pire des cas (quand $n$ est un nombre pseudo-premier, ie composé de deux grands premiers), la boucle <kbd>while</kbd> fait presque $\sqrt{n}$ tours ; on dit alors que l'algorithme est en $\mathcal{O}(\sqrt{n})$.
-
-**Devoirs pour la semaine suivante** :
-* Modifier ce script pour l'accélérer dans de nombreux cas. Imaginer que l'on dispose d'une fonction `isprime` très rapide, qui sera appelée à chaque fois qu'un facteur $p$ aura été identifié, et épuisé.   
-Il doit être fulgurant pour un nombre comme $n=120\times p$ où $p$ est un grand nombre premier.  
-En pratique, pour un entier, au hasard, il y a _souvent_ plusieurs petits facteurs (ou moyens), et un grand. Mais pas toujours…  
-Le pire des cas restant quand un entier est composé de deux grands nombres premiers ; nous verrons des méthodes faciles qui fonctionnent dans certains cas particuliers (quand les grands facteurs sont proches).  Avant cela, il faut étudier comment tester très rapidement la primalité d'un entier.
-* Une autre façon d'accélérer ce script est de tester seulement les nombres premiers entre $2$ et $257$, et ensuite tester les entiers impairs ; voire uniquement certains. Proposer une modification en ce sens.
-* S'inscrire avec votre nom et prénom sur [SPOJ](http://www.spoj.com/) et choisir CERI comme institution. Résoudre les problèmes faciles suivants, dont la description est en anglais.
-
-    1. http://www.spoj.com/problems/TEST/ (la solution est en lien dans la description)
-
-    1. http://www.spoj.com/problems/SMPDIV/
-
-    1. http://www.spoj.com/problems/STRHH/
-
-    1. http://www.spoj.com/problems/ALCATRAZ1/
-
-    2. http://www.spoj.com/problems/PRIME1/
-
-    2. http://www.spoj.com/problems/AMR11E/
-
-    3. http://www.spoj.com/problems/ENIGMATH/
-
-    4. https://projecteuler.net/problem=23
-
-## Exercice 2 - Project Euler - three first ones
-**Problem 1**  
-If we list all the natural numbers below $10$ that are multiples of $3$ or $5$, we get $3$, $5$, $6$ and $9$. The sum of these multiples is $23$.
-
-Find the sum of all the multiples of $3$ or $5$ below $1000$.
-
-
-
-```python
-# force brute
-def PE001(n):
-    S = 0
-    for k in range(n):
-        if (k%3 == 0) or (k%5) == 0:
-            S += k
-    return S
-
-PE001(1000)
-```
-
-
-
-
-    233168
-
-
-
-
-```python
-# force brute mais plus élégante
-print(sum(k for k in range(1000) if not((k%3)*(k%5))))
-```
-
-    233168
-
-
-Pour une solution sans boucle :
-* trouver une formule pour $\sum\limits_{k=0}^{n}k$,
-* en déduire une formule pour $\sum\limits_{k=0}^{n}dk$,
-* trouver un lien entre les multiples de $3$ ou de $5$, les multiples de $3$, les multiples de $5$, et les multiples de $3$ et $5$ (ie ceux de $15$),
-* en déduire une formule pour `PE001(n)`,
-* lire le forum pour d'autres solutions. _Conseil : la page 5 est souvent très bonne._ 
----
-
-**Problem 2**  
-Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with $1$ and $2$, the first 10 terms will be:
-
-$$1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \cdots$$
-
-By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
-
-
-
-```python
-# force brute
-def PE002(lim):
-    S, a, b = 0, 0, 1
-    while a <= lim:
-        if a%2 == 0:
-            S += a
-        a, b = b, a+b
-    return S
-
-PE002(4_000_000)
-```
-
-
-
-
-    4613732
-
-
-
-
-```python
-# force brute mais plus élégante
-# -> lire le forum, il y a beaucoup à apprendre,
-# et dans de nombreux langage de programmation.
-```
-
----
-**Problem 3**  
-The prime factors of $13195$ are $5$, $7$, $13$ and $29$.
-
-What is the largest prime factor of the number $600\,851\,475\,143$ ?
-
-
-
-```python
-def PE003(n):
-    return factor(n)[-1][0]
-
-PE003(600851475143)
-```
-
-
-
-
-    6857
-
-
+Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
 ## Exercice 3
-Montrer que $5$ est le seul nombre premier de la forme $n^4+4$.
 
----
-**Correction :** On lance un script pour factoriser les premiers termes, afin de deviner un facteur pour le terme général.
-
-
-```python
-for n in range(20):
-    print(n, factor(n**4 + 4))
-```
-
-    0 [(2, 2)]
-    1 [(5, 1)]
-    2 [(2, 2), (5, 1)]
-    3 [(5, 1), (17, 1)]
-    4 [(2, 2), (5, 1), (13, 1)]
-    5 [(17, 1), (37, 1)]
-    6 [(2, 2), (5, 2), (13, 1)]
-    7 [(5, 1), (13, 1), (37, 1)]
-    8 [(2, 2), (5, 2), (41, 1)]
-    9 [(5, 1), (13, 1), (101, 1)]
-    10 [(2, 2), (41, 1), (61, 1)]
-    11 [(5, 1), (29, 1), (101, 1)]
-    12 [(2, 2), (5, 1), (17, 1), (61, 1)]
-    13 [(5, 1), (29, 1), (197, 1)]
-    14 [(2, 2), (5, 1), (17, 1), (113, 1)]
-    15 [(197, 1), (257, 1)]
-    16 [(2, 2), (5, 1), (29, 1), (113, 1)]
-    17 [(5, 2), (13, 1), (257, 1)]
-    18 [(2, 2), (5, 1), (29, 1), (181, 1)]
-    19 [(5, 2), (13, 1), (401, 1)]
-
-
-On constate que pour $n=9$ et $n=19$, le plus grand facteur est $(n+1)^2+1$, qui pourrait-être un polynôme candidat divisant $n^4+4$.
-
-Ce que l'on teste avec un script.
-
-
-```python
-for n in range(20):
-    assert (n**4 + 4)%( (n+1)**2 + 1) == 0, "Conjecture fausse"
-print("Conjecture plausible.")
-```
-
-    Conjecture plausible.
-
-
-On le prouve alors. Le polynome $n^4+4$ devrait être le produit de $(n+1)^2+1$ avec un autre polynôme de degré $2$, de la forme $an^2+bn+c$, avec $a,b,c$ entiers relatifs.  
-* En regardant le coefficient dominant, on déduit $a=1$.
-* En regardant pour $n=0$, on déduit $c=2$.  
-* En regardant pour $n=1$, on déduit $1 + 4 = 5 \times (a+b+c)$, d'où $b=-2$.
-* Notre polynôme candidat donc est $n^2-2n+2 = (n-1)^2+1$. 
-
-Il reste à vérifier que $n^4+4 = ( (n+1)^2+1)((n-1)^2+1)$.  
-Deux méthodes pour cela : 
-1. Développer et réduire le membre de droite ; _boring, but legit_.
-2. Cette égalité polynomiale de degré $4$, _a priori_, est à vérifier uniquement en $5$ points pour être établie.
-    1. En $0$, on a $0+4 = (1+1)(1+1)$, clair.
-    2. En $\pm1$, on a $1+4 = (4+1)(0+1)$, clair.
-    3. En $\pm2$, on a $16+4 = (9+1)(1+1)$, clair.
-    
-Pour conclure le problème, il ne reste qu'à :
-* Affirmer que pour $n\ne \pm1$, on a $(n+1)^2+1>1$ et $(n-1)^2+1>1$, et donc $n^4+4$ est composé, donc non premier.
-* Affirmer que pour $n=\pm1$, on a $n^4+1 = 5$ qui est donc le seul nombre premier de cette forme.
+Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
 
 ## Exercice 4
-Montrer par récurrence que pour tout entier $n$ le nombre $3^{2n+1} + 2^{n+2}$ est divisible par $7$.
 
+Calculer $A = \dfrac{21}{1535} + \dfrac{17}{2763}$
 
-```python
-# Un script pour tester la conjecture
-for n in range(20):
-    assert (3**(2*n+1) + 2**(n+2))%7 == 0, "Conjecture fausse."
-print("Conjecture plausible.")
-```
+*Donner le résultat sous forme d'une fraction irréductible. Justifier cela de manière efficace !*
 
-    Conjecture plausible.
+> **Indice** : penser à l'algorithme d'Euclide.
 
+## Exercice 5
 
-**Démonstration par récurrence sur $\mathbb{N}$:**  
-* Pour $n=0$, on a $3^{2n+1} + 2^{n+2} = 3^1+2^2 = 7$ qui est divisible par $7$.
-* Soit $n\in \mathbb{N}$, on suppose que $3^{2n+1} + 2^{n+2}$ est divisible par $7$. _(HR)_
-> $A= (3^{2n+1} + 2^{n+2})(9+2)$ est donc aussi divisible par $7$.  
-> $A= 3^{2n+3} + 2^{n+3} + 2\times3^{2n+1} + 9\times2^{n+2}$  
-> $A= 3^{2n+3} + 2^{n+3} + 2\times(3^{2n+1} + 2^{n+2}) + 7\times2^{n+2}$  
-> D'après _(HR)_, on déduit que $3^{2n+3} + 2^{n+3}$ est divisible par $7$.
+Calculer $B = \dfrac{15730}{25137} × \dfrac{45619}{112200}$
 
-Ce qui prouve par récurrence la proposition.
+*Donner le résultat sous forme d'une fraction irréductible.*
 
----
+> **Indice** : penser à la décomposition en facteurs premiers des numérateurs et des dénominateurs.
 
-## Exercice 5 - Crible d'Ératosthène
-Une première version.
+## Exercice 5
 
+Calculer $C = \dfrac{1}{91} + \dfrac{2}{91} × \dfrac{5}{3}$
 
-
-```python
-lim = 1_000_100
-Crible = [1]*lim
-Crible[:2] = [0]*2
-p = 2
-while p*p<lim:
-    if Crible[p] == 1:
-        # p est alors premier,
-        # on 'coche' les multiples de p comme composés,
-        # il suffit de commencer à p²
-        for k in range(p*p, lim, p):
-            Crible[k] = 0
-    p += 1
-# On construit alors la liste :
-Prime = []
-for p in range(lim):
-    if Crible[p] == 1:
-        Prime.append(p)
-
-# On en affiche un peu
-print(Prime[:15])
-print(Prime[-15:])
-```
-
-    [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
-    [999883, 999907, 999917, 999931, 999953, 999959, 999961, 999979, 999983, 1000003, 1000033, 1000037, 1000039, 1000081, 1000099]
-
-
-**Critique du script :**
-* Python utilise une place importante en mémoire pour stocker des entiers, alors qu'ici un seul bit est utilisé ; non seulement utiliser beacoup de mémoire ralentit considérablement le script, mais en plus la limite est vite atteinte.
-    * Un première idée est d'utiliser une structure de données moins gourmande, il existe `bytearray` en Python qui prend un octet par élément, c'est un premier pas. En `C++` il existe les `bitset` taillés pour ça.
-    * Une autre idée est de faire le crible tranche par tranche, ainsi la mémoire utilisée est nettement réduite, et peut rentrer entièrement en mémoire cache qui est nettement plus rapide.
-* Il existe d'autres cribles avec une meilleure complexité théorique, mais en pratique Eratosthène restera un choix très judicieux du fait de sa simplicité et des nombreuses optimisations possibles.
+*Donner le résultat sous forme d'une fraction irréductible.*
 
 ## Exercice 6
-**Un problème indispensable** : ici on jette les bases d'une méthode pour factoriser très rapidement une grande quantité de 'petits' nombres.
+> Pour les élèves aussi en NSI.
 
-Construire la liste ```factorMini``` **indexée à zéro**, de longueur un million, telle que :
-* ```factorMini[0] = 0```, inutilisé.
-* ```factorMini[1] = 1```
-* ```factorMini[n] = p```, où $p$ est le plus petit facteur premier de $n>1$.
+On rappelle que : 
+* $\text{PGCD}(a, 0) = |a|$ pour tout $a\in \mathbb Z$
+* Pour $b\neq 0$, $\text{PGCD}(a, b) = \text{PGCD}(b, r)$, où $r$ est le reste dans la division euclidienne de $a$ par $b$.
 
-Cette [liste](https://oeis.org/A020639) commence donc par : ```[0, 1, 2, 3, 2, 5, 2, 7, 2, 3, ...```
-
-Par exemple, en 9<sup>ème</sup> position, $9$ est composé et son plus petit facteur premier est $3$. 
-
-
-**Conseil :** s'inspirer du crible d'Ératosthène.
-
----
-**Correction :** L'objectif ici n'est pas de factoriser un nombre, mais de nombreux. Dans ce cas, l'utilisation d'une liste est très utile.
-
-* On initialise une liste $u_n = n$.
-* On itère sur les premiers termes, et si $u_p$ est resté à $p$, c'est qu'il est premier, dans ce cas, chacun de ses multiples est à traiter :
-    * ou bien, il avait déjà un facteur premier signalé, on le laisse,
-    * ou bien, on indique que $p$ est le plus petit facteur premier de cet entier. 
-
-À construire en TD.
-
-Réfléchir à l'utilisation d'une telle liste pour factoriser rapidement un entier.
+En déduire une fonction Python récursive de calcul de $\text{PGCD}$.
