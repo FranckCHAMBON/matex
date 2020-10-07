@@ -34,6 +34,8 @@ Soient $a,b,c$ trois entiers relatifs.
 
 > **Remarque** : on a écrit que $0$ divise $0$, cependant $0$ divisé par $0$ n'est pas défini... Nuance.
 
+> **Rappel** : $|a|$ signifie valeur absolue de $a$. Exemple $|+7| = 7$, et $|-7|=7$. De manière générale $|x| = x$ si est positif, et $|x| = -x$ si est négatif. Ou alors $|x| = \text{max}(x, -x)$.
+
 **Une propriété très utile**
 > Avec $a, b, c, u, v \in \mathbb{Z}$,
 > * si $a\mid b$ et $a\mid c$,

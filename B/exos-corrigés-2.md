@@ -33,6 +33,11 @@ Soient $a,b,c$ trois entiers relatifs.
 8. Si $a\mid b$ et $a\mid c$, alors $b=a×k$ avec $k\in\mathbb Z$, et $c=a×l$ avec $l\in\mathbb Z$, ainsi $b+c = a×k+a×l=a×(k+l)$, avec $(k+l)\in\mathbb Z$, ainsi $a\mid b+c$.
 9. Si $a\mid b$, alors $b=a×k$ avec $k\in\mathbb Z$, donc $bc=a×(k×c)$ avec $(k×c)\in\mathbb Z$, et $bc = a×k×c = (ac)×k$ avec $(ac)\in\mathbb Z$, ainsi $a\mid bc$ et $ac\mid bc$. *On a utilisé ici la commutativité de la multiplication !.*
 10. Si  $ac\mid bc$ avec $c\neq 0$, alors $bc=ac×k$ avec $k\in\mathbb Z$, d'où $b=a×k$, ainsi $a\mid b$.
+11. Si  $a\mid b$ avec $b\neq 0$, alors $|a|\mid |b|$ et $|b| = |a| × k$ avec $k\in\mathbb Z$. Avec $b\neq 0$, on déduit $k\neq 0$ et $a\neq 0$, et enfin $0<|a| \leqslant |b|$ ;
+12. Si  $a\mid b$ et $b\mid a$ , alors
+* si $a=0$, alors $b=0$ d'après 5.
+* si $b=0$, alors $a=0$ d'après 5.
+* sinon, $0<|a| \leqslant |b|$ et $0<|b| \leqslant |a|$ d'après 11. d'où $|a|=|b|$, ainsi  $a=\pm b$.
 
 ## Exercice 2
 
