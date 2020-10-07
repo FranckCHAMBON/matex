@@ -21,13 +21,19 @@ Soient $a,b,c$ trois entiers relatifs.
 11. Si  $a\mid b$ avec $b\neq 0$, alors $0<|a| \leqslant |b|$ ;
 12. Si  $a\mid b$ et $b\mid a$ , alors $a=\pm b$.
 
+> **Indice** : Pour la 1., on a $a = a×1$, donc $1\mid a$. Pour les autres, il y a un peu plus de travail, mais l'esprit reste le même : traduire la notion 'divise' par une multiplication, et travailler.
+
 ## Exercice 2
 
 Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
+> **Indice** : la huit va vous aider.
+
 ## Exercice 3
 
 Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
+
+> **Indice** : Comme dans le cours.
 
 ## Exercice 4
 
@@ -51,6 +57,8 @@ Calculer $C = \dfrac{1}{91} + \dfrac{2}{91} × \dfrac{5}{3}$
 
 *Donner le résultat sous forme d'une fraction irréductible.*
 
+> **Indice** : La réponse n'est pas $\dfrac{1}{91×5}$ ; non !
+
 ## Exercice 6
 > Pour les élèves aussi en NSI.
 
@@ -59,3 +67,5 @@ On rappelle que :
 * Pour $b\neq 0$, $\text{PGCD}(a, b) = \text{PGCD}(b, r)$, où $r$ est le reste dans la division euclidienne de $a$ par $b$.
 
 En déduire une fonction Python récursive de calcul de $\text{PGCD}$.
+
+> **Indice** : indice.
