@@ -23,6 +23,7 @@
         * [Corrigé du DS n°1](A/ds1-corrigé.html)
     * [Feuille d'exercices n°1](A/exos-1.html)
         * [Correction des exercices](A/exos-corrigés-1.html)
+        * [Corrigé exercice NSI ; partie 2](A/exo-nsi.html)
 2. [Divisibilité dans Z](B/DiviZ.html)
     * Sommaire
         1. Définition, premières propriétés

@@ -8,7 +8,7 @@ Pour les élèves en Maths expertes + NSI.
 * La notion de proportionnalité s'entend ici avec un coefficient qui n'est pas clairement défini, mais plutôt encadré. Il dépendra de la machine qui exécute le code... L'objectif étant de pouvoir anticiper un temps de calcul. 
 
 ### Exemple
-Avec un algorithme en $\Theta(\sqrt(n))$, qui met $4\,s$ pour traiter le cas $n = 10^6$, on sait qu'il mettra $40\,s$ pour $n=10^8$. En effet, on complète le tableau de proportionnalité suivant.
+Avec un algorithme en $\Theta(\sqrt n )$, qui met $4\,s$ pour traiter le cas $n = 10^6$, on sait qu'il mettra $40\,s$ pour $n=10^8$. En effet, on complète le tableau de proportionnalité suivant.
 
 |Entrée $n$|Temps (s)|
 |----|----|
