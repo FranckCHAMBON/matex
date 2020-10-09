@@ -43,9 +43,16 @@ Soient $a,b,c$ trois entiers relatifs.
 
 Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
+* $35 = 5×7$, donc $7 \mid 35$, et donc $7 \mid 35×1000$. (prop. 9)
+* D'autre part $42 = 6×7$, donc $7 \mid 42$.
+* Ainsi $7 \mid 35\,000 +42$. (prop. 8)
+
 ## Exercice 3
 
 Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
+
+* $(16191÷9252) \rightarrow (q=1, r=6339)$
+* ...
 
 ## Exercice 4
 
