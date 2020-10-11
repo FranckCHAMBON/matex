@@ -3,6 +3,9 @@
 
 # Feuille d'exercices 2
 
+> **Rappel** : La notation $|x|$ signifie valeur absolue de $x$, c'est le maximum entre $x$ et $-x$. On a $|x| = x$ si $x\geqslant 0$. On a $|x| = -x$ si $x\leqslant 0$.
+Exemples : $|+7| = +7$, et $|-11|=+11$.
+
 ## Exercice 1
 
 Démontrer les premières propriétés vues en cours ; à savoir : 
@@ -23,13 +26,18 @@ Soient $a,b,c$ trois entiers relatifs.
 
 ### Corrigé
 1. $\forall a \in \mathbb Z, a = a×1$, ainsi $1\mid a$.
-2. Les solutions de l'équation sur $\mathbb Z$ : $a×b = 1$ sont $(a=1, b=1)$ et $(a=-1, b=-1)$, en effet ni $a$ ni $b$ ne peuvent être nuls, et ni de valeur absolue supérieure à $1$.
+2. Les solutions de l'équation sur $\mathbb Z$ : $a×b = 1$ sont $(a=1, b=1)$ et $(a=-1, b=-1)$, en effet ni $a$ ni $b$ ne peuvent être nuls, et ni de valeur absolue supérieure à $1$. $a$ et $b$ étant de même signe, on a :
+* Si $a>1$, alors $b\geqslant 1$, et $a×b>1$ ; *impossible*.
+* Si $a<-1$, alors $b\leqslant -1$, et $a×b>1$ ; *impossible*.
+* $a$ et $b$ jouent des rôles symétriques, donc on a de même $b>1$ et $b<-1$ impossible.
+* Et $a$ ou $b$ nul, implique $a×b = 0$ ; *impossible*.
+* Il ne reste que les cas $a=b=1$, et $a=b=-1$.
 3. Si $a\mid b$, alors $b = a×k$ pour $k\in \mathbb Z$, on déduit $-b=-a×k$, mais aussi $-b=a×(-k)$, et encore $b=(-a)×k$, le tout avec $(-a)$ et $(-k)$ dans $\mathbb Z$ (*important à souligner*), ainsi $\pm a \mid \pm b$.
 4. $\forall a\in\mathbb Z, 0=0×a$, ainsi $a\mid 0$.
 > Remarque : $0\mid 0$, certes, mais $0$ divisé par $0$ n'est pas défini. C'est différent.
 5. Si $0\mid a$, alors $a=0×k$, avec $k\in\mathbb Z$, donc $a=0$.
 6. $a=a×1$, donc $a\mid a$.
-7. Si $a\mid b$ et $b\mid c$, alors $c=b×k$ avec $k\in\mathbb Z$, et $b=a×l$ avec $l\in\mathbb Z$, d'où $c = (a×l)×k = a×(l×k)$ avec $(l×k)\in\mathbb Z$, ainsi $a\mid c$.
+7. Si $a\mid b$ et $b\mid c$, alors $c=b×k$ avec $k\in\mathbb Z$, et $b=a×l$ avec $l\in\mathbb Z$, d'où $c = (a×l)×k = a×(l×k)$ avec $(l×k)\in\mathbb Z$, ainsi $a\mid c$. *On a utilisé l'associativité de la multiplication.*
 8. Si $a\mid b$ et $a\mid c$, alors $b=a×k$ avec $k\in\mathbb Z$, et $c=a×l$ avec $l\in\mathbb Z$, ainsi $b+c = a×k+a×l=a×(k+l)$, avec $(k+l)\in\mathbb Z$, ainsi $a\mid b+c$.
 9. Si $a\mid b$, alors $b=a×k$ avec $k\in\mathbb Z$, donc $bc=a×(k×c)$ avec $(k×c)\in\mathbb Z$, et $bc = a×k×c = (ac)×k$ avec $(ac)\in\mathbb Z$, ainsi $a\mid bc$ et $ac\mid bc$. *On a utilisé ici la commutativité de la multiplication !.*
 10. Si  $ac\mid bc$ avec $c\neq 0$, alors $bc=ac×k$ avec $k\in\mathbb Z$, d'où $b=a×k$, ainsi $a\mid b$.
@@ -53,6 +61,8 @@ Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
 
 * $(16191÷9252) \rightarrow (q=1, r=6339)$
 * ...
+
+**À vous de continuer.**
 
 ## Exercice 4
 
