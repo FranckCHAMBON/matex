@@ -51,6 +51,8 @@ Soient $a,b,c$ trois entiers relatifs.
 
 Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
+---
+
 * $35 = 5×7$, donc $7 \mid 35$, et donc $7 \mid 35×1000$. (prop. 9)
 * D'autre part $42 = 6×7$, donc $7 \mid 42$.
 * Ainsi $7 \mid 35\,000 +42$. (prop. 8)
@@ -59,10 +61,13 @@ Démontrer que $7 \mid 35\,042$, sans calculatrice.
 
 Avec l'algorithme d'Euclide, calculer $\text{PGCD}(16191, 9252)$.
 
-* $(16191÷9252) \rightarrow (q=1, r=6939)$
-* ...
+---
 
-**À vous de continuer.**
+* $(16191÷9252) \rightarrow (q=1, r=6939)$
+* $(9252÷6939) \rightarrow (q=1, r=2313)$
+* $(6939÷2313) \rightarrow (q=3, r=0)$
+Le dernier diviseur est $2313$, c'est le $\text{PGCD}(16191, 9252)$.
+
 
 ## Exercice 4
 
@@ -70,7 +75,31 @@ Calculer $A = \dfrac{21}{1535} + \dfrac{17}{2763}$
 
 *Donner le résultat sous forme d'une fraction irréductible. Justifier cela de manière efficace !*
 
-> **Indice** : penser à l'algorithme d'Euclide.
+---
+
+Calculons $\text{PGCD}(1535, 2763)$ avec l'algorithme d'Euclide.
+* $(1535÷2763) \rightarrow (q=0, r=1535)$
+* $(2763÷1535) \rightarrow (q=1, r=1228)$
+* $(1535÷1228) \rightarrow (q=1, r=307)$
+* $(1228÷307) \rightarrow (q=4, r=0)$
+Le dernier diviseur est $307$, c'est le $\text{PGCD}(1535, 2763)$.
+
+On peut alors écrire : $1535 = 307×5$ et $2763=307×9$, de sorte que :
+
+* $A = \dfrac{21}{307×5} + \dfrac{17}{307×9}$, *on obtient le même dénominateur.*
+
+* $A = \dfrac{21×9}{307×5×9} + \dfrac{17×5}{307×9×5}$, *inutile de calculer le dénominateur.*
+
+* $A = \dfrac{21×9+17×5}{307×5×9}$, *mais on doit calculer le numérateur.*
+
+* $A = \dfrac{274}{307×5×9}$, *pour simplifier, on peut penser à la décomposition en facteurs premiers.*
+
+* $A = \dfrac{2×137}{307×5×3^2}$, *on ne peut donc pas simplifier cette fraction.*
+
+* $A = \dfrac{274}{13815}$ est irréductible.
+
+> On peut aussi vérifier que $\text{PGCD}(274, 13815) = 1$. C'est une excellente méthode.
+
 
 ## Exercice 5
 
@@ -78,13 +107,44 @@ Calculer $B = \dfrac{15730}{25137} × \dfrac{45619}{112200}$
 
 *Donner le résultat sous forme d'une fraction irréductible.*
 
-> **Indice** : penser à la décomposition en facteurs premiers des numérateurs et des dénominateurs.
+---
+On a les décompositions en facteurs premiers :
+* $15730 = 2× 5× 11× 11× 13$
+* $25137 = 3^3× 7^2× 19$
+* $45619 = 7^4× 19$
+* $112200 = 2^3× 3× 5^2× 11× 17$
+
+On en déduit :
+* $B = \dfrac{2× 5× 11× 11× 13}{3^3× 7^2× 19} × \dfrac{7^4× 19}{2^3× 3× 5^2× 11× 17}$
+
+* $B = \dfrac{2× 5× 11× 11× 13× 7^4× 19}{3^3× 7^2× 19× 2^3× 3× 5^2× 11× 17}$, *simplifions par $2$, $5$, $11$, $7^2$ et $19$.*
+
+* $B = \dfrac{11× 13× 7^2}{3^3× 2^2× 3× 5× 17}$, *enfin rangeons.*
+
+* $B = \dfrac{7^2×11×13}{2^2× 3^4× 5× 17}$, *le résultat demandé.*
 
 ## Exercice 5
 
 Calculer $C = \dfrac{1}{91} + \dfrac{2}{91} × \dfrac{5}{3}$
 
 *Donner le résultat sous forme d'une fraction irréductible.*
+
+---
+
+> :warning: L'opération prioritaire n'est pas l'addition, mais la multiplication.
+
+* $C = \dfrac{1}{91} + \dfrac{2×5}{91×3}$
+
+* $C = \dfrac{1×3}{91×3} + \dfrac{2×5}{91×3}$
+
+* $C = \dfrac{1×3+2×5}{91×3}$, *on n'évalue pas le dénominateur !*
+
+* $C = \dfrac{13}{91×3}$, *on cherche à simplifier*.
+
+Si une fraction possède un petit numérateur, ou un petit dénominateur, on décompose ce petit nombre en facteurs premiers, et seules les simplifications possibles sont issues de ces facteurs. Ici, $13$ seul candidat, or $91=7×13$, donc on peut simplifier.
+
+* $C = \dfrac{1}{7×3}$, le résultat attendu.
+
 
 ## Exercice 6
 > Pour les élèves aussi en NSI.
@@ -94,3 +154,23 @@ On rappelle que :
 * Pour $b\neq 0$, $\text{PGCD}(a, b) = \text{PGCD}(b, r)$, où $r$ est le reste dans la division euclidienne de $a$ par $b$.
 
 En déduire une fonction Python récursive de calcul de $\text{PGCD}$.
+
+---
+
+```python
+def pgcd(a: int, b: int) -> int:
+    """Renvoie PGCD(a, b) pour a et b relatifs.
+    >>> pgcd(15, 49)
+    1
+    >>> pgcd(-12, 18)
+    6
+    """
+    if b == 0:
+        return abs(a)
+    else:
+        return pgcd(b, a%b)
+    
+    # variante en une ligne
+    return abs(a) if b == 0 else pgcd(b, a%b)
+```
+
