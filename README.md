@@ -35,6 +35,6 @@
         * Travailler des preuves simples en arithmétique.
         * Découvrir l'algorithme d'Euclide.
     * [Feuille d'exercices n°2](B/exos-2.html)
-        * [Correction des (**premiers**) exercices](B/exos-corrigés-2.html)
+        * [Correction de (**tous les**) exercices](B/exos-corrigés-2.html)
     * [Devoir surveillé n°2](B/ds2.html)
         * [Corrigé du DS n°1](B/ds2-corrigé.html)
