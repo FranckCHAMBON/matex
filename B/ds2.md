@@ -28,7 +28,7 @@ $$B = \frac 1 {11009} - \frac 1 {11227}$$
 
 $$C = \frac{2^3×3^5×7}{11^2×13^5}×\frac{13^2×17^2}{2^2×7^3×11}$$
 
-$$D = \frac 1 p - \frac 1 {p'}\text{ , où } p \text{ et } p' \text{ sont des nombres premiers jumeaux.}$$
+$$D = \frac 1 p - \frac 1 {p'}\text{ , où } p < p' \text{ sont des nombres premiers jumeaux.}$$
 
 # Ex 3 : Je sais faire des démonstrations (4 pts)
 Pour chaque proposition, si elle est vraie donner une démonstration, si elle est fausse donner un contre-exemple.

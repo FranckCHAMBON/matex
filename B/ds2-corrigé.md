@@ -11,7 +11,7 @@ Les nombres premiers inférieurs à $32$ sont : $2,3,5,7,11,13,17,19,23,29,31$. 
 
 2. $(101, 103)$ est-il un couple de nombres premiers jumeaux ?
 
-$101$ et $103$ ne sont divisibles par aucun nombre premier inférieur ou égal à $10$ qui est la valeur approchée par défaut de $\sqrt{103}$. Ainsi, ils sont tous deux premiers.
+$101$ et $103$ ne sont divisibles par aucun nombre premier inférieur ou égal à $10$ qui est la valeur approchée par défaut de $\sqrt{103}$. Ainsi, ils sont tous deux premiers. $103-101=2$, on a donc bien un couple de nombres premiers jumeaux.  
 
 3. $(839, 841)$ est-il un couple de nombres premiers jumeaux ?
 
@@ -61,7 +61,7 @@ $$B = \frac 1 {11\,009} - \frac 1 {11\,227}$$
 
 $$B = \frac 1 {109×101} - \frac 1 {109×103}$$
 
-$$B = \frac {103} {109×101×103} - \frac {101} {109×103×101}$$
+$$B = \frac {1×103} {109×101×103} - \frac {1×101} {109×103×101}$$
 
 $$B = \frac {103-101} {109×101×103}$$
 
@@ -83,7 +83,7 @@ Il n'y a rien en commun dans la décomposition en facteurs premiers des numérat
 
 ---
 
-$$D = \frac 1 p - \frac 1 {p'}\text{ , où } p \text{ et } p' \text{ sont des nombres premiers jumeaux.}$$
+$$D = \frac 1 p - \frac 1 {p'}\text{ , où } p < p' \text{ sont des nombres premiers jumeaux.}$$
 
 $$D = \frac 1 p - \frac 1 {p+2}$$
 
