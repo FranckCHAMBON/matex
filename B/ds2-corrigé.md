@@ -7,7 +7,7 @@ Nombres premiers jumeaux
 
 1. Donner la liste des couples de nombres premiers jumeaux $(p, p')$ avec $p < 30$.
 
-Les nombres premiers inférieurs à $32$ sont : $2,3,5,7,11,13,17,19,23,29,31$. Ainsi les couples $(p, p+2)$ de nombres premiers sont : $(3, 5), (5, 7), (11, 13), (17, 19)$, et $(29, 31)$.
+Les nombres premiers inférieurs à $32$ sont : $2,3,5,7,11,13,17,19,23,29,31$. Ainsi les couples $(p, p+2)$ de nombres premiers jumeaux sont : $(3, 5), (5, 7), (11, 13), (17, 19)$, et $(29, 31)$.
 
 2. $(101, 103)$ est-il un couple de nombres premiers jumeaux ?
 
