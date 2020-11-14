@@ -29,7 +29,7 @@ Soient $a,b,c$ trois entiers relatifs.
 2. Les solutions de l'équation sur $\mathbb Z$ : $a×b = 1$ sont $(a=1, b=1)$ et $(a=-1, b=-1)$, en effet ni $a$ ni $b$ ne peuvent être nuls, et ni de valeur absolue supérieure à $1$. $a$ et $b$ étant de même signe, on a :
 * Si $a>1$, alors $b\geqslant 1$, et $a×b>1$ ; *impossible*.
 * Si $a<-1$, alors $b\leqslant -1$, et $a×b>1$ ; *impossible*.
-* $a$ et $b$ jouent des rôles symétriques, donc on a de même $b>1$ et $b<-1$ impossible.
+* $a$ et $b$ jouent des rôles symétriques, donc on a de même $b>1$ et $b<-1$ impossibles.
 * Et $a$ ou $b$ nul, implique $a×b = 0$ ; *impossible*.
 * Il ne reste que les cas $a=b=1$, et $a=b=-1$.
 3. Si $a\mid b$, alors $b = a×k$ pour $k\in \mathbb Z$, on déduit $-b=-a×k$, mais aussi $-b=a×(-k)$, et encore $b=(-a)×k$, le tout avec $(-a)$ et $(-k)$ dans $\mathbb Z$ (*important à souligner*), ainsi $\pm a \mid \pm b$.
@@ -86,7 +86,7 @@ Le dernier diviseur est $307$, c'est le $\text{PGCD}(1535, 2763)$.
 
 On peut alors écrire : $1535 = 307×5$ et $2763=307×9$, de sorte que :
 
-* $A = \dfrac{21}{307×5} + \dfrac{17}{307×9}$, *on obtient le même dénominateur.*
+* $A = \dfrac{21}{307×5} + \dfrac{17}{307×9}$, *on veut obtenir le même dénominateur.*
 
 * $A = \dfrac{21×9}{307×5×9} + \dfrac{17×5}{307×9×5}$, *inutile de calculer le dénominateur.*
 
@@ -98,7 +98,7 @@ On peut alors écrire : $1535 = 307×5$ et $2763=307×9$, de sorte que :
 
 * $A = \dfrac{274}{13815}$ est irréductible.
 
-> On peut aussi vérifier que $\text{PGCD}(274, 13815) = 1$. C'est une excellente méthode.
+> On peut aussi vérifier que $\text{PGCD}(274, 13815) = 1$. C'est une excellente méthode, pour simplifier, ou justifier qu'une fraction est irréductible.
 
 
 ## Exercice 5
