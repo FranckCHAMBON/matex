@@ -39,7 +39,7 @@
     * [Devoir surveillé n°2](B/ds2.html)
         * [Corrigé du DS n°2](B/ds2-corrigé.html)
     * [Feuille d'exercices n°3](B/exos-3.html)
-        * [Correction]() *À venir*
+        * [Correction partielle](B/exos-corrigés-3.html)
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
         * [Correction]() *À venir*
         
