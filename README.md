@@ -42,4 +42,4 @@
         * [Correction partielle](B/exos-corrigés-3.html)
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
         * [Correction]() *À venir*
-        
+3. [Arithmétique modulaire](C/congruences.html)
