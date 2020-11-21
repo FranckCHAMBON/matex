@@ -1,10 +1,18 @@
 # [Mathématiques expertes](https://franckchambon.github.io/matex/)
 
->Classe de Terminale, au lycée Lucie Aubrac à Bollène
+> Classe de Terminale, au lycée Lucie Aubrac à Bollène
 
 * Le cours et les exercices feront parfois appel à Python3 pour illustrer les méthodes.
 
 * Les exercices sont corrigés ou bien sur place, ou bien en fin de document.
+
+## Classe virtuelle de M. Chambon
+> [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
+
+Rendez-vous en cas de confinement complet :
+* :clock1: les vendredis de 13h à 14h
+
+
 
 ## Partie 2 : Arithmétique
 
