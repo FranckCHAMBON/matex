@@ -10,7 +10,7 @@
 > [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
 
 Rendez-vous en cas de confinement complet :
-* :clock1: les vendredis de 13h à 14h
+* les vendredis de 13h à 14h
 
 
 
