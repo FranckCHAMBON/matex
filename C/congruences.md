@@ -20,7 +20,7 @@ ciel pour illuminer le mystère du continu._
 * $162$ est congru à $27$, modulo $15$ ;
 * $77$ est congru à $0$ modulo $7$.
 
-**Exemples plus difficile**.
+**Exemple plus difficile**.
 
 En étudiant le dernier chiffre de $7^n$, nous avons remarqué que le résultat était commun pour certaines classes d'entiers :
 * la classe des entiers $n$ dont le reste dans une division par $4$ est égal à $0$, donnait un dernier chiffre pour $7^n$ égal à $1$.
@@ -63,7 +63,7 @@ Dans le cas contraire
 
 **Image mentale**
 * Il faut imaginer une roue avec les nombres de $0$ à $m-1$ ; il y a $m$ nombres.
-* On fait fait tourner d'un certain nombre de crans en partant de $0$, la roue qui s'arrête sur un nombre, peut importe le nombre de tours effectués avant. Par exemple, avec $m=7$, faire tourner de 55 crans conduit à finir sur le $6$.
+* On fait tourner d'un certain nombre de crans en partant de $0$, la roue qui s'arrête sur un nombre, peut importe le nombre de tours effectués avant. Par exemple, avec $m=7$, faire tourner de 55 crans conduit à finir sur le $6$.
 * Deux nombres congrus modulo $m$ conduisent au même résidu modulo $m$ ; au même point sur la roue.
 
 ### Résidu

@@ -28,10 +28,10 @@ Rendez-vous en cas de confinement complet :
         * Savoir obtenir la décomposition en facteurs premiers d'un entier inférieur à 1000.
         * Savoir calculer le PGCD de deux entiers inférieurs à 1000.
     * [Feuille d'exercices n°1](A/exos-1.html)
-        * [Correction des exercices](A/exos-corrigés-1.html)
-        * [Corrigé exercice NSI ; partie 2](A/exo-nsi.html)
+        * [Correction](A/exos-corrigés-1.html)
+        * [Correction exercice NSI ; partie 2](A/exo-nsi.html)
     * [Devoir surveillé n°1](A/ds1.html)
-        * [Corrigé du DS n°1](A/ds1-corrigé.html)
+        * [Correction](A/ds1-corrigé.html)
 2. [Divisibilité dans Z](B/DiviZ.html)
     * Sommaire
         1. Définition, premières propriétés
@@ -43,11 +43,11 @@ Rendez-vous en cas de confinement complet :
         * Travailler des preuves simples en arithmétique.
         * Découvrir l'algorithme d'Euclide.
     * [Feuille d'exercices n°2](B/exos-2.html)
-        * [Correction de **tous les** exercices](B/exos-corrigés-2.html)
+        * [Correction](B/exos-corrigés-2.html)
     * [Devoir surveillé n°2](B/ds2.html)
-        * [Corrigé du DS n°2](B/ds2-corrigé.html)
+        * [Correction](B/ds2-corrigé.html)
     * [Feuille d'exercices n°3](B/exos-3.html)
-        * [Correction partielle](B/exos-corrigés-3.html)
+        * [Correction partielle](B/exos-corrigés-3.html) *suite à venir*
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
         * [Correction]() *À venir*
 3. [Arithmétique modulaire](C/congruences.html)
