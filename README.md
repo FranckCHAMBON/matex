@@ -51,3 +51,9 @@ Rendez-vous en cas de confinement complet :
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
         * [Correction]() *À venir*
 3. [Arithmétique modulaire](C/congruences.html)
+    * Sommaire
+        1. Congruence
+        2. Résidu
+        3. Propriétés de calcul
+        4. Inversion
+        
