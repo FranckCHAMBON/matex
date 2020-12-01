@@ -49,7 +49,7 @@ Rendez-vous en cas de confinement complet :
     * [Feuille d'exercices n°3](B/exos-3.html)
         * [Correction](B/exos-corrigés-3.html) **Complet**
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
-        * [Correction](B/exos-4-corrigés.html) **--->>> Nouveau <<<---**
+        * [Correction](B/exos-4-corrigés.html) **- - - > > > Nouveau < < < - - -**
 3. [Arithmétique modulaire](C/congruences.html)
     * Sommaire
         1. Congruence
