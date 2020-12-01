@@ -132,3 +132,6 @@ Pour $a$ fixé, on construit la liste de tous les produits $ab$ et on cherche si
 ### Exemple
 * Démontrer que $3$ est inversible modulo $5$.
 * Démontrer que $4$ n'admet pas d'inverse modulo $6$.
+
+### Exercice NSI+Matex
+Faire un script qui trouve s'il existe un inverse de $a$ modulo $m$.

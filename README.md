@@ -47,7 +47,7 @@ Rendez-vous en cas de confinement complet :
     * [Devoir surveillé n°2](B/ds2.html)
         * [Correction](B/ds2-corrigé.html)
     * [Feuille d'exercices n°3](B/exos-3.html)
-        * [Correction partielle](B/exos-corrigés-3.html) *suite à venir*
+        * [Correction](B/exos-corrigés-3.html) **Complet**
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
         * [Correction](B/exos-4-corrigés.html) **--->>> Nouveau <<<---**
 3. [Arithmétique modulaire](C/congruences.html)
