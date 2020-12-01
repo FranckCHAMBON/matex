@@ -49,7 +49,76 @@ $c$ divise $8$. **VRAIE.**
 
 ---
 
-À vous ...
+> Une réponse
+
+Voyons d'abord ce que Python peut répondre directement.
+
+```python
+# 1.
+a = 7
+e = 1337
+
+print(f"Le dernier chiffre de {a} exposant {e} est :", a**e % 10)
+# Noter l'utilisation de : f"texte et {variable} mélangés"
+
+print(f"Le dernier chiffre de {a} exposant {e} est :", pow(a, e, 10))
+# Méthode plus rapide et efficace ; Python utilise ici du calcul modulaire... à suivre
+
+#----
+
+# 2.
+a = 7
+e = 1337**42
+
+#print(a**e % 10) # <--- danger, ne pas essayer !!!
+# Le calcul de a**e ne rentre pas en mémoire !!!
+# Même pas pour un ordinateur de la taille de l'univers.
+
+print("Question 2 ->", pow(a, e, 10))
+# Cette méthode fonctionne.
+```
+
+
+    Le dernier chiffre de 7 exposant 1337 est : 7
+    Le dernier chiffre de 7 exposant 1337 est : 7
+    Question 2 -> 7
+
+
+
+Étude mathématique.
+
+* $7^0 = 1$, se termine par un $1$.  
+* $7^1 = 7$, se termine par un $7$.  
+* $7^2 = 49$, se termine par un $9$.  
+* $7^3 = \dots3$, se termine par un $3$, tout comme $9\times 7=63$.  
+* $7^4 = \dots1$, se termine par un $1$, tout comme $3\times 7=21$.  
+* $7^5 = \dots7$, se termine par un $7$, tout comme $1\times 7=7$.  
+* $7^6 = \dots9$, se termine par un $9$, tout comme $7\times 7=49$.  
+* $7^7 = \dots3$, se termine par un $3$, tout comme $9\times 7=63$.  
+* $7^8 = \dots1$, se termine par un $1$, tout comme $3\times 7=21$.  
+* $\dots$
+
+La suite est cyclique, d'ordre $4$.
+
+* Les exposants $e$ conduisant à $7^e$ se finissant par $1$, sont : $\{0, 4, 8, 12, 16, 20, 24,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $0$. On dit que ce sont les entiers congrus à $0$ modulo $4$, ils sont dans la même classe.
+* Les exposants $e$ conduisant à $7^e$ se finissant par $7$, sont : $\{1, 5, 9, 13, 17, 21, 25,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $1$. On dit que ce sont les entiers congrus à $1$ modulo $4$, ils sont dans la même classe.
+* Les exposants $e$ conduisant à $7^e$ se finissant par $9$, sont : $\{2, 6, 10, 14, 18, 22, 26,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $2$. On dit que ce sont les entiers congrus à $2$ modulo $4$, ils sont dans la même classe.
+* Les exposants $e$ conduisant à $7^e$ se finissant par $1$, sont : $\{3, 7, 11, 15, 19, 23, 27,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $3$. On dit que ce sont les entiers congrus à $3$ modulo $4$, ils sont dans la même classe.
+
+Notre question 1. se résume donc à : « Quelle est la classe de $1337$, modulo $4$ ? »  
+$1337 \div 4 \mapsto (q=334, r=1)$, on déduit que $1337$ est dans la classe de $1$, modulo $4$. On écrit : $1337 \equiv 1 \pmod 4$.
+
+$1337$ étant dans la classe de $1$, modulo $4$, on déduit que $7^{1337}$ se termine par un $7$.
+
+---
+
+Notre question 2. se résume aussi à : « Quelle est la classe de $1337^{42}$, modulo $4$ ? »  
+
+Nous verrons que $1337 \equiv 1 \pmod 4$ implique que $1337^{42} \equiv 1^{42} \equiv 1 \pmod 4$.
+
+$1337^{42}$ étant dans la classe de $1$, modulo $4$, on déduit que $7^{(1337^{42})}$ se termine par un $7$.
+
+
 
 ---
 
@@ -158,7 +227,14 @@ $\Theta(M^3)$ signifie (un peu comme $\mathcal{O}(M^3)$) que le script fait un n
 
 Pour passer en $\Theta(M^2)$, on remplace la dernière boucle par un calcul du seul candidat possible pour $c$ avec le théorème de Pythagore.
 
-À vous de continuer ...
+
+```python
+for a in range(1, M):
+    for b in range(1, M):
+        c = round(sqrt(a*a + b*b))
+        if (c < M) ans (a*a + b*b == c*c):
+            print(a, b, c)
+```
 
 ---
 
@@ -167,4 +243,18 @@ Pour passer en $\Theta(M^2)$, on remplace la dernière boucle par un calcul du s
 
 ---
 
-À vous ...
+> Une réponse
+
+On factorise $511\;104$, ici avec un appel de commande externe via `bash` dans la console Python de Jupyter.  
+_Qui a dit tricheur ?_
+
+La version `factor` incluse dans `bash` est très efficace ; bien plus que les méthodes qui vous sont accessibles. Pensez-y si votre méthode est trop lente.
+
+```bash
+$ factor 511104
+511104: 2 2 2 2 2 2 2 3 11 11 11
+```
+
+On a : $511\;104 = 2^7\times3\times11^3 = (2^6\times11^2)\times(2\times3\times11)$, et donc :
+
+$\sqrt{511\;104} = (2^3\times11)\times\sqrt{2\times3\times11} = 88\sqrt{66}$
