@@ -103,7 +103,7 @@ La suite est cyclique, d'ordre $4$.
 * Les exposants $e$ conduisant à $7^e$ se finissant par $1$, sont : $\{0, 4, 8, 12, 16, 20, 24,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $0$. On dit que ce sont les entiers congrus à $0$ modulo $4$, ils sont dans la même classe.
 * Les exposants $e$ conduisant à $7^e$ se finissant par $7$, sont : $\{1, 5, 9, 13, 17, 21, 25,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $1$. On dit que ce sont les entiers congrus à $1$ modulo $4$, ils sont dans la même classe.
 * Les exposants $e$ conduisant à $7^e$ se finissant par $9$, sont : $\{2, 6, 10, 14, 18, 22, 26,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $2$. On dit que ce sont les entiers congrus à $2$ modulo $4$, ils sont dans la même classe.
-* Les exposants $e$ conduisant à $7^e$ se finissant par $1$, sont : $\{3, 7, 11, 15, 19, 23, 27,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $3$. On dit que ce sont les entiers congrus à $3$ modulo $4$, ils sont dans la même classe.
+* Les exposants $e$ conduisant à $7^e$ se finissant par $3$, sont : $\{3, 7, 11, 15, 19, 23, 27,\dots\}$. Ce sont les entiers dont le reste dans une division modulo $4$ est égale à $3$. On dit que ce sont les entiers congrus à $3$ modulo $4$, ils sont dans la même classe.
 
 Notre question 1. se résume donc à : « Quelle est la classe de $1337$, modulo $4$ ? »  
 $1337 \div 4 \mapsto (q=334, r=1)$, on déduit que $1337$ est dans la classe de $1$, modulo $4$. On écrit : $1337 \equiv 1 \pmod 4$.
