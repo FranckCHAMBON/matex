@@ -49,11 +49,17 @@ Rendez-vous en cas de confinement complet :
     * [Feuille d'exercices n°3](B/exos-3.html)
         * [Correction](B/exos-corrigés-3.html) **Complet**
     * [Feuille d'exercices n°4](B/exos-4.html) **Pour NSI et maths expertes**
-        * [Correction](B/exos-4-corrigés.html) **- - - > > > Nouveau < < < - - -**
+        * [Correction](B/exos-4-corrigés.html)
 3. [Arithmétique modulaire](C/congruences.html)
     * Sommaire
         1. Congruence
         2. Résidu
         3. Propriétés de calcul
         4. Inversion
+4. [Théorème de Bachet-Bezout](D/bachet-bezout.html)
+    * Sommaire
+        1. Théorème
+        2. Exemples introductifs et explicatifs
+        3. Démonstration
+        4. Exercices et applications
         
