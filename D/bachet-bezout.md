@@ -176,7 +176,7 @@ $a\times \left(u-k\dfrac{b}{d}\right) + b\times \left(v+k\dfrac{a}{d}\right) = d
 
 **Proposition.** Pour tous entiers $(a, b)$, on a:
 
-> $$a\land b = 1 \iff \exists\;u, v \in \mathbb{Z}, \, au+bv = 1$$
+> $$\text{PGCD}(a, b) = 1 \iff \exists\;u, v \in \mathbb{Z}, \, au+bv = 1$$
 
 > *Preuve :* Un sens est donné directement par le théorème précédent.  
 > Pour l'autre sens, on note $\text{PGCD}(a, b) = d$, $a=da'$, $b=db'$.  
@@ -188,7 +188,7 @@ et ainsi $d=1$, ie $a$ et $b$ sont premiers entre eux.
 $$\left.
     \begin{array}{rr}
       a\mid bc \\
-      a\land b = 1
+      \text{PGCD}(a, b) = 1
     \end{array}
   \right\}
   \implies a\mid c$$
@@ -201,8 +201,8 @@ $$\left.
 **Proposition** Soit $a, b, c \in \mathbb{Z}$, alors
 $$\left.
     \begin{array}{rr}
-      a\mid c,\, b\mid c \\
-      a\land b = 1
+      a\mid c,\text{ et } b\mid c \\
+      \text{PGCD}(a, b) = 1
     \end{array}
   \right\}
   \implies ab\mid c$$
@@ -219,10 +219,8 @@ $$\left.
 
 Avec $a\neq 0$, $b\neq 0$ et $c$ fixés dans $\mathbb{Z}$, discutons des solutions de cette équation $(E)$.
 
-* Si $a\land b \nmid c$, alors il n'y a pas de solutions.
-* Si $a\land b \mid c$, alors on écrit $d = a\land b$, $a=a'd$, $b=b'd$ et $c=c'd$.  
-On a $a'\land b' =1$, et les solutions de $(E)$ sont les mêmes que celles de :  
+* Si $\text{PGCD}(a, b) \nmid c$, alors il n'y a pas de solutions.
+* Si $\text{PGCD}(a, b) \mid c$, alors on écrit $d = \text{PGCD}(a, b)$, $a=a'd$, $b=b'd$ et $c=c'd$.  
+On a $\text{PGCD}(a', b') =1$, et les solutions de $(E)$ sont les mêmes que celles de :  
 $$ (E') \quad a'x+b'y=c' $$
-On s'inspire de la remarque au I] pour construire l'ensemble des solutions.  
-Ce sera l'objet d'un problème, avec juge en ligne.
-
+On s'inspire de la remarque faite suite au programme Python (Euclide étendu) pour construire l'ensemble des solutions.
