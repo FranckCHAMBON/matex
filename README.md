@@ -62,4 +62,4 @@ Rendez-vous en cas de confinement complet :
         2. Exemples introductifs et explicatifs
         3. Démonstration
         4. Exercices et applications
-        
+    * [Exercices](D/exercices.html)
