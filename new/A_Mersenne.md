@@ -79,7 +79,7 @@ En 1952, [Raphael Robinson](https://fr.wikipedia.org/wiki/Raphael_Robinson) prou
 
 ## Exercice
 
-<iframe src="https://console.basthon.fr/?script=eJxTUlLi5VJWcK1ILUrOTE5VsOLl4uVyTsxJLs1JLVLwjTc0MlewUjBSOLxAISdRoaA0s7g4MQ-oDiiuo1CQU1qsYAjSoQQyBgAM1hPP" width="1000" height="700"></iframe>
+<iframe src="https://console.basthon.fr/?script=eJxTUlLi5VJWcK1ILUrOTE5VsOLl4uVyTsxJLs1JLVLwjTc0MlewUjBSOLxAISdRoaA0s7g4MQ-oDiiuo5Cbn5lXrGAI0qIEMgcAJCEUMQ" width="1000" height="500"></iframe>
 
 <details>
    <summary>Cliquer ici pour voir la solution</summary>

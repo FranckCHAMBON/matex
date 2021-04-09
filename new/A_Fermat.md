@@ -15,7 +15,7 @@ Les [nombres de Fermat](https://fr.wikipedia.org/wiki/Nombre_de_Fermat) sont de 
 
 ## Exemples
 
-|$F_0$|$F_2$|$F_2$|$F_3$|$F_4$|
+|$F_0$|$F_1$|$F_2$|$F_3$|$F_4$|
 |:---:|:---:|:---:|:---:|:---:|
 | $3$ | $5$ | $17$|$257$|$65537$|
 
