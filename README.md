@@ -64,3 +64,6 @@ Rendez-vous en cas de confinement complet :
         3. Démonstration
         4. Exercices et applications
     * [Exercices](D/exercices.html)
+
+
+[Travail du jour](new/accueil.html)
