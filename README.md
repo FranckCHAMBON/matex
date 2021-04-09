@@ -7,7 +7,8 @@
 * Les exercices sont corrigés ou bien sur place, ou bien en fin de document.
 
 ## Classe virtuelle de M. Chambon
-> [https://lycee.cned.fr/cv/258054/203](https://lycee.cned.fr/cv/258054/203)
+
+> [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
 
 Rendez-vous en cas de confinement complet :
 * les vendredis de 13h à 14h
