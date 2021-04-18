@@ -8,9 +8,7 @@
 
 ## Classe virtuelle de M. Chambon
 
-==Nouveau Lien==
-
-> [https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc](https://visio-lycees.education.fr/meeting/signin/5013/creator/295/hash/e161db729a8ab35c2a04c6f857ac83ae5bb53ffc).
+> [https://lycee.cned.fr/cv/296531/436](https://lycee.cned.fr/cv/296531/436)
 
 Rendez-vous en cas de confinement complet :
 * les vendredis de 13h à 14h
@@ -66,3 +64,6 @@ Rendez-vous en cas de confinement complet :
         3. Démonstration
         4. Exercices et applications
     * [Exercices](D/exercices.html)
+
+
+[Travail du jour](new/accueil.html)
