@@ -66,4 +66,4 @@ Rendez-vous en cas de confinement complet :
     * [Exercices](D/exercices.html)
 
 
-[Travail du jour](new/accueil.html)
+[Travail du jour](https://ens-fr.gitlab.io/python_maths/)
